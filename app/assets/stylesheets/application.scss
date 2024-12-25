@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+@import "components/footer";
+@import "components/navbar";
+@import "pages/home";
+@import "pages/contact";
+@import "pages/welcome";
+
+body {
+  margin: 0;
+}
