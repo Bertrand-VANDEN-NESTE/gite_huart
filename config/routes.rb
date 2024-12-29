@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'pages#welcome'
 
+  get 'home', to:'pages#home'
+  get 'contact', to:'pages#contact'
+  get 'welcome', to:'pages#welcome'
   get 'index', to:'rooms#index'
   get 'show', to:'rooms#show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

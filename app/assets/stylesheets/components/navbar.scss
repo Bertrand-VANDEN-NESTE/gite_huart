@@ -1,10 +1,14 @@
 .navbarbox{
-  
+  width: 100vw;
+  height: auto;
   .navbar{
-
     .navbarul{
-
+      display: flex;
+      flex-direction: row;
+      list-style: none;
       .navbarli{
+        width: 20vw;
+        margin: auto;
 
       }
     }

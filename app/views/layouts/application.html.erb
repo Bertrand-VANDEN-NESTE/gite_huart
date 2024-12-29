@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GiteHuart</title>
+    <title>Chambre d'hôte - HUART</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- favicon of massalia  -->
+    <%= favicon_link_tag "FB_IMG_1735151995643.jpg", rel: "icon", type: "jpg" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -13,4 +15,5 @@
   <body>
     <%= yield %>
   </body>
+  <%= render "components/footer" %>
 </html>

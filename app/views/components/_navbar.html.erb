@@ -1,10 +1,10 @@
 <div class="navbarbox">
   <nav class="navbar">
     <ul class="navbarul">
-      <li class="navbarli">Bienvenue</li>
-      <li class="navbarli">Accueil</li>
-      <li class="navbarli">Les chambres d'hôte</li>
-      <li class="navbarli">Contact</li>
+      <%= link_to 'Bienvenue', welcome_path, class: 'navbarli' %>
+      <%= link_to 'Accueil', home_path, class: 'navbarli' %>
+      <%= link_to "Les chambres d'hôte", index_path, class: 'navbarli' %>
+      <%= link_to 'Contact', contact_path, class: 'navbarli' %>
     </ul>
   </nav>
 </div>

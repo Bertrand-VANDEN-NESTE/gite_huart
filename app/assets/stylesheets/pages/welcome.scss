@@ -1,4 +1,6 @@
-.container {
+.background-welcome {
+  position: absolute;
+  top: 0;
   width: 100vw;
   height: 100vh;
   .background {
@@ -6,5 +8,17 @@
     height: 100%;
     overflow: hidden;
     object-fit: cover;
+  }
+}
+
+.container-welcome {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  margin: auto;
+  .block-welcome {
+    width: 100%;
+    margin: auto;
+
   }
 }
