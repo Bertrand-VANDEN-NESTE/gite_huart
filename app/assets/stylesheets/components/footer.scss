@@ -1,0 +1,25 @@
+.container-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f3f3f3;
+
+  span {
+    margin: auto;
+    span {
+      a {
+        color: var(--color_txt);
+        text-decoration: none;
+      }
+    }
+  }
+
+  p {
+    margin: auto;
+    color: var(--color_txt);
+  }
+}

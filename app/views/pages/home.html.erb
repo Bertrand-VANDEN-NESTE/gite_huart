@@ -1,2 +1,33 @@
 <%= render "components/navbar" %>
-<div>home</div>
+<%= render "components/backgroundheader"%>
+<div class="txt-home">
+  <div>
+    <h1>Bienvenue</h1>
+  </div>
+  <div>
+    <p>
+      Charme, élégance, douceur de vivre dans un cadre unique, à dix minutes du centre de Toulouse. Profitez de vos voyages d'affaires ou de tourisme pour vous reposer dans un authentique Manoir du 16ᵉᵐᵉ siècle.
+    </p>
+  </div>
+  <div>
+    <p>
+      Babeth et Claude vous proposent un hébergement en chambres d'hôtes ou en gîte dans cette propriété aux murs de briques avec son grand parc aux chênes centenaires. Vous pouvez également organiser vos séminaires ou réunions de travail dans le domaine.
+    </p>
+  </div>
+  <div>
+    <p>
+      Le Manoir Saint Clair est idéalement situé aux portes de Toulouse pour apprécier la ville et ses nombreuses activités environnantes : Cité de l'espace, Airbus, golf, musées, restaurants, etc...
+    </p>
+  </div>
+</div>
+<div class="panel-img">
+  <div class="panel-img-dispo">
+    <%= image_tag "door.jpeg", class:"panel-img-size"%>
+    <%= image_tag "front2.jpeg", class:"panel-img-size"%>
+    <%= image_tag "hibou.jpeg", class:"panel-img-size"%>
+    <%= image_tag "swimmingpool.jpeg", class:"panel-img-size"%>
+    <%= image_tag "flowers.jpeg", class:"panel-img-size"%>
+  </div>
+</div>
+
+<%= render "components/footer" %>

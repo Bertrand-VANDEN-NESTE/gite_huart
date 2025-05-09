@@ -16,10 +16,18 @@
 
 @import "components/footer";
 @import "components/navbar";
+@import "components/backgroundheader.scss";
+@import "components/privacypolicy.scss";
+@import "components/legalnotices.scss";
 @import "pages/home";
 @import "pages/contact";
 @import "pages/welcome";
+@import "pages/show.scss";
 
 body {
   margin: 0;
+}
+
+:root {
+  --color_txt: 74, 74, 74;
 }

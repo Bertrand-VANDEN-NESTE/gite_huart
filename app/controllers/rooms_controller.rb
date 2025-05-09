@@ -3,5 +3,6 @@ class RoomsController < ApplicationController
   end
 
   def show
+
   end
 end
