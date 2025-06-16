@@ -1,3 +1,15 @@
 <%= render "components/navbar" %>
 <%= render "components/backgroundheader"%>
+<h1 class="titleroom">Nos chambres</h1>
+
+<% @rooms.each do |room| %>
+  <div class="room-card">
+    <h2><%= link_to room.title, room_path(room) %></h2>
+    <img src="<%= room.image_url %>" alt="Image de <%= room.title %>" width="300">
+    <p><%= truncate(room.content, length: 150) %></p>
+    <p><strong>Capacité :</strong> <%= room.capacity %> personnes</p>
+    <p><strong>Prix :</strong> <%= number_to_currency(room.price, unit: "€") %> / nuit</p>
+  </div>
+<% end %>
+
 <%= render "components/footer" %>

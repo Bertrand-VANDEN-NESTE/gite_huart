@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  email: MyString
+  status: MyString
+  start_date: 2025-05-17
+  end_date: 2025-05-17
+  total_price: 9.99
+  room: one
+
+two:
+  full_name: MyString
+  email: MyString
+  status: MyString
+  start_date: 2025-05-17
+  end_date: 2025-05-17
+  total_price: 9.99
+  room: two

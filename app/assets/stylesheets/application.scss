@@ -16,13 +16,15 @@
 
 @import "components/footer";
 @import "components/navbar";
-@import "components/backgroundheader.scss";
-@import "components/privacypolicy.scss";
-@import "components/legalnotices.scss";
+@import "components/backgroundheader";
+@import "components/privacypolicy";
+@import "components/legalnotices";
 @import "pages/home";
 @import "pages/contact";
 @import "pages/welcome";
-@import "pages/show.scss";
+@import "pages/show";
+@import "pages/indexroom";
+@import "pages/showroom";
 
 body {
   margin: 0;

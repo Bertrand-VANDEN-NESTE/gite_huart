@@ -1,0 +1,14 @@
+.titleroom {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: auto;
+  padding-top: 20px;
+  text-align: center;
+}
+.room-card {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin: auto;
+}

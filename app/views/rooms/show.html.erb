@@ -1,3 +1,16 @@
 <%= render "components/navbar" %>
+<%= render "components/backgroundheader"%>
+<div class="reservationroom">
+  <h1><%= @room.title %></h1>
+  <img src="<%= @room.image_url %>" alt="<%= @room.title %>" width="500">
+  <p><%= @room.content %></p>
+  <p><strong>Taille :</strong> <%= @room.size %></p>
+  <p><strong>Capacité :</strong> <%= @room.capacity %> personnes</p>
+  <p><strong>Nombre de lits :</strong> <%= @room.bed_count %></p>
+  <p><strong>Prix :</strong> <%= number_to_currency(@room.price, unit: "€") %> / nuit</p>
+  <p><strong>Équipements :</strong> <%= @room.features %></p>
 
+  <%= link_to "Réserver cette chambre", new_room_reservation_path(@room), class: "btn btn-primary" %>
+
+</div>
 <%= render "components/footer" %>

@@ -1,0 +1,13 @@
+.container {
+  width: 100vw;
+  height: auto;
+  .container-contact {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+  }
+}
