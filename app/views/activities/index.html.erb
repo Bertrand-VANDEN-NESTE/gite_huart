@@ -1,0 +1,24 @@
+<%= render "components/navbar" %>
+<%= render "components/backgroundheader"%>
+<h1>Activités dans les environs</h1>
+
+<div class="activities-grid">
+  <% @activities.each do |activity| %>
+    <div class="activity-card">
+      <% if activity.image_url.present? %>
+        <div class="activity-image">
+          <%= image_tag(activity.image_url, alt: activity.title, class: "activity-img") %>
+        </div>
+      <% end %>
+
+      <div class="activity-content">
+        <h2><%= activity.title %></h2>
+        <p><%= activity.description %></p>
+        <% if activity.distance.present? && activity.distance != "-" %>
+          <p><strong>Distance :</strong> <%= activity.distance %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= render "components/footer" %>

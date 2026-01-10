@@ -1,35 +1,28 @@
 <%= render "components/navbar" %>
-<%= render "components/backgroundheader"%>
-<div class="container">
-  <div class="container-contact">
-    <h1>
-      CONTACT
-    </h1>
-    <h2>L'entre-deux-pommes</h2>
-    <div>
-      <h2>
-        Adresse :
-      </h2>
-      <p>
-        608 route de la guiberdière, 49430 Bourgneuf, France
-      </p>
-    </div>
-    <div>
-      <h2>
-      Téléphone :
-      </h2>
-      <p>
-        06.70.83.45.78
-      </p>
-    </div>
-    <div>
-      <h2>
-        E-mail :
-      </h2>
-      <p>
-        lentredeuxpommes@gmail.com
-      </p>
+<%= render "components/backgroundheader" %>
+
+<div class="contact-wrapper">
+  <div class="contact-card">
+    <h1 class="contact-title">Contact</h1>
+    <h2 class="contact-subtitle">L'entre-deux-pommes</h2>
+
+    <div class="contact-info">
+      <div class="contact-block">
+        <h3>📍 Adresse</h3>
+        <p>608 route de la Guiberdière<br>49430 Bourgneuf, France</p>
+      </div>
+
+      <div class="contact-block">
+        <h3>📞 Téléphone</h3>
+        <p><a href="tel:+33670834578">06.70.83.45.78</a></p>
+      </div>
+
+      <div class="contact-block">
+        <h3>📧 E-mail</h3>
+        <p><a href="mailto:lentredeuxpommes@gmail.com">lentredeuxpommes@gmail.com</a></p>
+      </div>
     </div>
   </div>
 </div>
+
 <%= render "components/footer" %>

@@ -1,0 +1,9 @@
+<h1><%= @activity.title %> <small><%= @activity.distance.present? ? "(#{@activity.distance})" : "" %></small></h1>
+
+<% if @activity.image_url.present? %>
+  <%= image_tag @activity.image_url, alt: @activity.title, class: "activity-img" %>
+<% end %>
+
+<p><%= @activity.description %></p>
+
+<%= link_to "Retour à la liste", activities_path %>

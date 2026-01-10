@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+gem "nokogiri", "~> 1.17.9"
+
 gem "ffi", "< 1.17"
 
 # Use Sass to process CSS

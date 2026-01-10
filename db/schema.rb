@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_05_17_145218) do
+ActiveRecord::Schema[7.1].define(version: 2025_07_20_163940) do
+  create_table "activities", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "distance"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "home_photos", force: :cascade do |t|
+    t.string "slug"
+    t.string "image_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reservations", force: :cascade do |t|
     t.string "full_name"
     t.string "email"
@@ -21,6 +37,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_17_145218) do
     t.integer "room_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phone_number"
     t.index ["room_id"], name: "index_reservations_on_room_id"
   end
 
@@ -37,6 +54,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_17_145218) do
     t.string "size"
     t.text "features"
     t.string "image_url"
+    t.string "slug"
   end
 
   add_foreign_key "reservations", "rooms"

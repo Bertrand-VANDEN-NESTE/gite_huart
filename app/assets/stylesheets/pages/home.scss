@@ -1,31 +1,104 @@
-.txt-home {
-  width: 70%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
+.welcome-section {
+  width: 75%;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #444;
+  line-height: 1.6;
   text-align: justify;
-  color: #717070;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+  }
 }
-.panel-img {
-  width: 100vw;
-  height: auto;
-  display: flex;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
 
-  .panel-img-dispo {
-    width: 70%;
-    margin: auto;
+.carousel-container {
+  width: 75%;
+  margin: 0 auto 40px;
+  overflow: hidden;
+  position: relative;
 
-    .panel-img-size {
-      width: 30%;
-      height: 30vh;
-      object-fit: cover;
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .carousel-slide {
+    min-width: 33.33%;
+    padding: 0 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .carousel-image {
+    width: 90%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
     }
+  }
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    border: none;
+    font-size: 2.5rem;
+    padding: 0 15px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #3498db;
+      color: white;
+    }
+
+    &.prev { left: 10px; }
+    &.next { right: 10px; }
+  }
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  &.hidden {
+    display: none;
+  }
+
+  .lightbox-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  }
+
+  .lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
   }
 }

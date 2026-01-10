@@ -1,15 +1,48 @@
 <%= render "components/navbar" %>
-<%= render "components/backgroundheader"%>
-<h1 class="titleroom">Nos chambres</h1>
+<%= render "components/backgroundheader" %>
+
+<h1 class="index_room_title">Nos chambres</h1>
 
 <% @rooms.each do |room| %>
   <div class="room-card">
-    <h2><%= link_to room.title, room_path(room) %></h2>
-    <img src="<%= room.image_url %>" alt="Image de <%= room.title %>" width="300">
-    <p><%= truncate(room.content, length: 150) %></p>
-    <p><strong>Capacité :</strong> <%= room.capacity %> personnes</p>
-    <p><strong>Prix :</strong> <%= number_to_currency(room.price, unit: "€") %> / nuit</p>
+    <% if room.image_paths.any? %>
+      <div class="carousel-container">
+        <div data-controller="carousel" class="carousel">
+          <div class="carousel__track" data-carousel-target="track">
+            <% room.image_paths.each do |src| %>
+              <div class="carousel__slide">
+                <%= image_tag src, alt: room.title, loading: "lazy", class: "img_carousel",
+                      data: { action: "click->lightbox#open", lightbox_image_url: asset_path(src) } %>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" data-action="carousel#prev">‹</button>
+          <button class="carousel__btn carousel__btn--next" data-action="carousel#next">›</button>
+        </div>
+      </div>
+    <% else %>
+      <div class="carousel-container">
+        <div class="no-image">
+          <p>Aucune image pour cette chambre.</p>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="room-info">
+      <h2><%= link_to room.title, room_path(room) %></h2>
+      <p><strong>Taille :</strong> <%= room.size %></p>
+      <p><strong>Capacité :</strong> <%= room.capacity %> personnes</p>
+      <p><strong>Nombre de lits :</strong> <%= room.bed_count %></p>
+      <p><strong>Prix :</strong> <%= number_to_currency(room.price, unit: "€") %> / nuit</p>
+      <p><strong>Équipements :</strong> <%= room.features %></p>
+    </div>
   </div>
 <% end %>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox hidden" data-controller="lightbox" data-lightbox-target="container" data-action="click->lightbox#close">
+  <img src="" alt="Image agrandie" class="lightbox-image" data-lightbox-target="image" />
+  <button class="lightbox-close" data-action="lightbox#close">×</button>
+</div>
 
 <%= render "components/footer" %>

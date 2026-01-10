@@ -1,0 +1,36 @@
+<%= form_with(model: @activity) do |form| %>
+  <% if @activity.errors.any? %>
+    <div class="errors">
+      <h2><%= pluralize(@activity.errors.count, "erreur") %> :</h2>
+      <ul>
+        <% @activity.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :distance, "Distance (ex: 300m)" %><br>
+    <%= form.text_field :distance %>
+  </div>
+
+  <div>
+    <%= form.label :image_url %><br>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

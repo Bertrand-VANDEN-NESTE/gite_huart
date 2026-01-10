@@ -1,33 +1,38 @@
-
 class ReservationsController < ApplicationController
-  before_action :set_room
-
   def new
-    # @room est déjà défini grâce à set_room
-  end
+    @room = Room.find(params[:room_id])
+    @reservation = Reservation.new
 
-  def index
-    @reservations = @room.reservations
-    render json: @reservations
+    # Toutes les dates entre start_date et end_date de chaque réservation existante
+    @unavailable_dates = @room.reservations.flat_map do |res|
+      (res.start_date..res.end_date).to_a
+    end.uniq
   end
 
   def create
-    @reservation = @room.reservations.new(reservation_params)
+    @room = Room.find(params[:room_id])
+    @reservation = @room.reservations.build(reservation_params)
+
+    if params[:date_range].present?
+      start_date, end_date = params[:date_range].split(" to ").map { |d| Date.parse(d) rescue nil }
+
+      @reservation.start_date = start_date
+      @reservation.end_date = end_date
+    end
 
     if @reservation.save
-      render json: @reservation, status: :created
+      redirect_to @room, notice: "Réservation enregistrée avec succès."
     else
-      render json: @reservation.errors, status: :unprocessable_entity
+      flash.now[:alert] = "Erreur lors de la réservation."
+      render :new, status: :unprocessable_entity
     end
   end
-
+  
   private
 
-  def set_room
-    @room = Room.find(params[:room_id])
+  def reservation_params
+    params.require(:reservation).permit(:full_name, :email, :phone_number)
   end
 
-  def reservation_params
-    params.require(:reservation).permit(:title, :start, :end)
-  end
+
 end

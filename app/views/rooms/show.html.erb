@@ -1,16 +1,29 @@
 <%= render "components/navbar" %>
 <%= render "components/backgroundheader"%>
-<div class="reservationroom">
-  <h1><%= @room.title %></h1>
-  <img src="<%= @room.image_url %>" alt="<%= @room.title %>" width="500">
-  <p><%= @room.content %></p>
-  <p><strong>Taille :</strong> <%= @room.size %></p>
-  <p><strong>Capacité :</strong> <%= @room.capacity %> personnes</p>
-  <p><strong>Nombre de lits :</strong> <%= @room.bed_count %></p>
-  <p><strong>Prix :</strong> <%= number_to_currency(@room.price, unit: "€") %> / nuit</p>
-  <p><strong>Équipements :</strong> <%= @room.features %></p>
+<div class="room-card">
+  <div class="carousel-container">
+    <div class="carousel" data-controller="carousel">
+      <div class="carousel__track" data-carousel-target="track">
+        <% @room.image_paths.each do |src| %>
+          <div class="carousel__slide">
+            <%= image_tag src, alt: @room.title, loading: "lazy", class: "img_carousel" %>
+          </div>
+        <% end %>
+      </div>
+      <button class="carousel__btn carousel__btn--prev" data-action="carousel#prev">‹</button>
+      <button class="carousel__btn carousel__btn--next" data-action="carousel#next">›</button>
+    </div>
+  </div>
 
-  <%= link_to "Réserver cette chambre", new_room_reservation_path(@room), class: "btn btn-primary" %>
-
+  <div class="room-info">
+    <h2><%= @room.title %></h2>
+    <p><%= @room.content %></p>
+    <p><strong>Taille :</strong> <%= @room.size %></p>
+    <p><strong>Capacité :</strong> <%= @room.capacity %> personnes</p>
+    <p><strong>Nombre de lits :</strong> <%= @room.bed_count %></p>
+    <p><strong>Prix :</strong> <%= number_to_currency(@room.price, unit: "€") %> / nuit</p>
+    <p><strong>Équipements :</strong> <%= @room.features %></p>
+    <%= link_to "Réserver cette chambre", new_room_reservation_path(@room), class: "btn btn-primary" %>
+  </div>
 </div>
 <%= render "components/footer" %>
