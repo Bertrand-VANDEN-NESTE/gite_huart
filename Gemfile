@@ -2,8 +2,7 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
-# calender gem
-gem 'simple_calendar'
+gem "ffi", "< 1.17"
 
 # Use Sass to process CSS
 gem "sassc-rails"
