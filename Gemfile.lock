@@ -309,7 +309,7 @@ DEPENDENCIES
   jbuilder
   minitest (~> 5.27)
   puma (>= 5.0)
-  rails (~> 7.2.0)
+  rails (~> 7.2.3)
   sassc-rails
   selenium-webdriver
   spring
