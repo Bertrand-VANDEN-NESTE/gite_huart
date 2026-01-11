@@ -9,19 +9,16 @@ Bundler.require(*Rails.groups)
 module GiteHuart
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.1
+    config.load_defaults 7.2
 
-    # Please, add to the `ignore` list any other `lib` subdirectories that do
-    # not contain `.rb` files, or that should not be reloaded or eager loaded.
-    # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    # Autoload lib/, ignore non-Ruby folders
+    config.autoload_lib(ignore: %w[assets tasks])
 
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    # Time zone (recommandé)
+    config.time_zone = "Paris"
+    config.active_record.default_timezone = :local
+
+    # i18n (optionnel mais propre)
+    config.i18n.default_locale = :fr
   end
 end

@@ -1,14 +1,12 @@
 source "https://rubygems.org"
 
-#gem "nokogiri", "~> 1.17.9"
-
-#gem "ffi", "< 1.17"
-
 # Use Sass to process CSS
 gem "sassc-rails"
 
+gem "minitest", "~> 5.27"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.5"
+gem "rails", "~> 7.2.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -62,8 +60,8 @@ group :development do
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  #Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  gem "spring"
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
 end
@@ -73,3 +71,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "brakeman", "~> 7.1", group: :development
