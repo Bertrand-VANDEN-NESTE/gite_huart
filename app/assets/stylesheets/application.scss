@@ -26,7 +26,9 @@
 @import "pages/indexroom";
 @import "pages/showroom";
 @import "pages/indexactivitie";
-@import "https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css";
+/* app/assets/stylesheets/application.scss */
+@import "flatpickr/dist/flatpickr.min.css";
+
 
 /*
  *= require flatpickr
