@@ -19,6 +19,7 @@ module GiteHuart
     config.active_record.default_timezone = :local
 
     # i18n (optionnel mais propre)
+    config.i18n.available_locales = [:en, :fr]
     config.i18n.default_locale = :fr
   end
 end
