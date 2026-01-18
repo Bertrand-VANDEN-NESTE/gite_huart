@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Use Sass to process CSS
 gem 'sassc-rails'
 
-ruby "3.3.9"
+ruby '3.3.9'
 
 gem 'minitest', '~> 5.27'
 
