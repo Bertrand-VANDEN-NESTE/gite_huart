@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Use Sass to process CSS
 gem 'sassc-rails'
 
+ruby "3.3.9"
+
 gem 'minitest', '~> 5.27'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
