@@ -33,7 +33,8 @@ Rails.application.configure do
   # Permet la compilation à la volée si un asset manque
   config.assets.compile = true
   config.assets.digest = true
-  config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = :terser
+
   # config.assets.css_compressor = :sass # Décommenter si tu utilises sass/scss
 
   # Affiche une erreur si un asset est manquant
@@ -76,4 +77,3 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.active_record.attributes_for_inspect = [ :id ]
 end
-
