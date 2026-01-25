@@ -23,13 +23,21 @@ Rails.application.configure do
   # Fichiers statiques (OBLIGATOIRE sur Scalingo)
   # ===============================
 
-  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
+  # Permet de servir les fichiers statiques depuis /public
+  config.public_file_server.enabled = true
 
   # ===============================
   # Assets
   # ===============================
 
-  config.assets.compile = false
+  # Permet la compilation à la volée si un asset manque
+  config.assets.compile = true
+  config.assets.digest = true
+  config.assets.js_compressor = :uglifier
+  # config.assets.css_compressor = :sass # Décommenter si tu utilises sass/scss
+
+  # Affiche une erreur si un asset est manquant
+  config.assets.raise_runtime_errors = true
 
   # ===============================
   # Active Storage
