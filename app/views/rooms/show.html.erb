@@ -23,7 +23,7 @@
     <p><strong>Nombre de lits :</strong> <%= @room.bed_count %></p>
     <p><strong>Prix :</strong> <%= number_to_currency(@room.price, unit: "€") %> / nuit</p>
     <p><strong>Équipements :</strong> <%= @room.features %></p>
-    <%= link_to "Réserver cette chambre", new_room_reservation_path(@room), class: "btn btn-primary" %>
+    <%= link_to "Faire une demande de réservation", new_reservation_path, class: "btn" %>
   </div>
 </div>
 <%= render "components/footer" %>

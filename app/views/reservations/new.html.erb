@@ -1,35 +1,27 @@
-<%= render "components/navbar" %>
-<%= render "components/backgroundheader"%>
-<h2>Réserver la chambre : <%= @room.title %></h2>
+<h1>Demande de réservation</h1>
 
-<%= form_with model: [@room, @reservation], local: true do |f| %>
-  <div class="field">
-    <%= f.label :full_name, "Nom complet" %><br>
-    <%= f.text_field :full_name, required: true %>
+<%= form_with url: create_reservation_path, method: :post, local: true do |f| %>
+  <div>
+    <%= f.label :name, "Votre nom" %><br>
+    <%= f.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= f.label :email, "Adresse e-mail" %><br>
-    <%= f.email_field :email, required: true %>
+  <div>
+    <%= f.label :email, "Email" %><br>
+    <%= f.email_field :email %>
   </div>
 
-  <div class="field">
-    <%= f.label :phone_number, "Numéro de téléphone" %><br>
-    <%= f.telephone_field :phone_number, required: true %>
+  <div>
+    <%= f.label :room, "Chambre souhaitée" %><br>
+    <%= f.text_field :room %>
   </div>
 
-  <div class="field">
-    <%= f.label :date_range, "Dates de réservation" %><br>
-    <%= text_field_tag :date_range, nil,
-      data: {
-        controller: "calendar",
-        calendar_unavailable_dates_value: @unavailable_dates.to_json
-      },
-      class: "datepicker",
-      autocomplete: "off",
-      required: true %>
+  <div>
+    <%= f.label :date, "Date souhaitée" %><br>
+    <%= f.date_field :date %>
   </div>
 
-  <%= f.submit "Réserver", class: "btn btn-primary" %>
+  <div>
+    <%= f.submit "Envoyer la demande" %>
+  </div>
 <% end %>
-<%= render "components/footer" %>

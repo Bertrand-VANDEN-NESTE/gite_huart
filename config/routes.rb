@@ -7,18 +7,17 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   get 'welcome', to: 'pages#welcome'
 
-  # Mentions légales & politique de confidentialité
+  # Composants légaux
   get 'legal',  to: 'components#legal_notices'
   get 'policy', to: 'components#privacy_policy'
 
-  # Lieux d’activités touristiques
-  resources :places
+  # Chambres
+  resources :rooms, only: [:index, :show]
 
-  # Chambres + Réservations
-  resources :rooms do
-    resources :reservations, only: [:new, :create, :index]
-  end
-
+  # Activités
   resources :activities
 
+  # Formulaire de demande de réservation
+  get  'reservation', to: 'reservations#new',    as: :new_reservation
+  post 'reservation', to: 'reservations#create', as: :create_reservation
 end
