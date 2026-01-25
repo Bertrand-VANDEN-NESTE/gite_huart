@@ -319,7 +319,7 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
-  terser
+  terser (>= 1.0.0)
   turbo-rails
   tzinfo-data
   web-console
