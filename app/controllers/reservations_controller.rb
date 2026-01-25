@@ -1,14 +1,11 @@
 class ReservationsController < ApplicationController
   def new
-    # Pas de modèle persisté nécessaire
+    # Formulaire vide
   end
 
   def create
-    # Tu peux envoyer un mail ou juste loguer pour l'instant
+    # Ici tu peux envoyer un mail ou simplement loguer
     Rails.logger.info "Nouvelle demande de réservation : #{reservation_params.inspect}"
-
-    # Exemple d'envoi mail si tu crées un mailer plus tard
-    # ReservationMailer.with(params: reservation_params).new_reservation_email.deliver_now
 
     redirect_to root_path, notice: "Votre demande a bien été envoyée."
   end
