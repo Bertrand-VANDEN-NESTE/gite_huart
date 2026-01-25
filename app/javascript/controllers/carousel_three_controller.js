@@ -6,10 +6,8 @@ export default class extends Controller {
   connect() {
     this.index = 0
     this.slidesPerView = 3
-
     this.resizeObserver = new ResizeObserver(() => this.update())
     this.resizeObserver.observe(this.trackTarget)
-
     this.update()
   }
 
