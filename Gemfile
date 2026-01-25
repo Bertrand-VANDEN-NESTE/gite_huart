@@ -7,7 +7,8 @@ ruby '3.3.9'
 gem 'rails', '~> 7.2.3'
 
 # Database
-gem 'sqlite3', '~> 1.4'
+gem 'pg', '>= 1.4', '< 3.0'  # obligatoire pour PostgreSQL en production
+gem 'sqlite3', '~> 1.4', group: [:development, :test]
 
 # Web server
 gem 'puma', '>= 5.0'
