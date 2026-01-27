@@ -17,8 +17,17 @@
   </div>
 
   <div>
-    <%= f.label :date, "Date souhaitée" %><br>
+    <%= f.label :datein, "Date d'entrée" %><br>
     <%= f.date_field :date %>
+  </div>
+
+  <div>
+    <%= f.label :dateout, "Date de sortie" %><br>
+    <%= f.date_field :date %>
+  </div>
+  <div>
+    <%= f.label :commentaire, "Vos commentaire" %><br>
+    <%= f.text_field :commentaire %>
   </div>
 
   <div>
