@@ -14,26 +14,27 @@
       z-index: -1;
       overflow: hidden;
       object-fit: cover;
-      opacity: 0.8;
+      filter: brightness(1.05) saturate(1.1);
     }
   }
   .background-show-txt {
     position: absolute;
     font-family: poppins-extralight, poppins, sans-serif;
     width: 100%;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
     text-align: center;
     top: 65%;
     transform: translateY(-50%);
 
     h1 {
       margin-top: 0;
-      color: #FFFF;
+      color: #fffacd;
       font-weight: lighter;
       font-size: 3em;
     }
 
     h2 {
-      color: #FFFF;
+      color: #fffacd;
       font-weight: lighter;
       font-size: 2.4em;
     }

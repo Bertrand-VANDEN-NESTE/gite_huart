@@ -1,104 +1,167 @@
+/* ===============================
+WELCOME SECTION
+================================ */
+
 .welcome-section {
-  width: 75%;
-  margin: 40px auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #444;
-  line-height: 1.6;
-  text-align: justify;
+  max-width: 900px;
+  margin: 80px auto 60px;
+  padding: 0 20px;
+  text-align: center;
+  color: #2c3e50;
+
   h1 {
     font-size: 3rem;
-    margin-bottom: 20px;
-    color: #2c3e50;
-    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1rem;
   }
 }
+
+/* ===============================
+CAROUSEL
+================================ */
 
 .carousel-container {
-  width: 75%;
-  margin: 0 auto 40px;
-  overflow: hidden;
   position: relative;
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  overflow: hidden;
+}
 
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
 
-  .carousel-slide {
-    min-width: 33.33%;
-    padding: 0 5px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
+.carousel-slide {
+  flex: 0 0 33.333%;
+}
 
-  .carousel-image {
-    width: 90%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.carousel-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 
-    &:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
-    }
-  }
-
-  .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.9);
-    border: none;
-    font-size: 2.5rem;
-    padding: 0 15px;
-    cursor: pointer;
-    z-index: 2;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    transition: background 0.3s ease;
-
-    &:hover {
-      background: #3498db;
-      color: white;
-    }
-
-    &.prev { left: 10px; }
-    &.next { right: 10px; }
+  &:hover {
+    transform: scale(1.06);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
   }
 }
 
-/* Lightbox */
+/* ===============================
+CAROUSEL BUTTONS
+================================ */
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.95);
+  border: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #2c3e50;
+    color: white;
+  }
+
+  &.prev { left: 15px; }
+  &.next { right: 15px; }
+}
+
+/* ===============================
+LIGHTBOX
+================================ */
+
 .lightbox {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.85);
+  inset: 0;
+  background: rgba(0,0,0,0.9);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 9999;
+  animation: fadeIn 0.3s ease;
 
   &.hidden {
     display: none;
   }
+}
 
-  .lightbox-image {
-    max-width: 90vw;
-    max-height: 90vh;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+.lightbox-image {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 20px;
+  animation: zoomIn 0.4s ease;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 25px;
+  right: 35px;
+  font-size: 3rem;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===============================
+ANIMATIONS
+================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.85); opacity: 0 }
+  to { transform: scale(1); opacity: 1 }
+}
+
+/* ===============================
+RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .carousel-slide {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-slide {
+    flex: 0 0 100%;
   }
 
-  .lightbox-close {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    font-size: 3rem;
-    color: white;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+  .carousel-button {
+    display: none;
+  }
+
+  .welcome-section h1 {
+    font-size: 2.2rem;
   }
 }
