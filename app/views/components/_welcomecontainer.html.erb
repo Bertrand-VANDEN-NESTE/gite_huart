@@ -1,12 +1,20 @@
-<div class="background-welcome">
+<div class="background-welcome" data-controller="zoom-background">
+
   <div class="background-welcome-img">
-    <%= image_tag "house/accueil16.jpg", class:"zoom-background"%>
+    <%= image_tag "house/accueil16.jpg",
+      class: "zoom-background",
+      data: { "zoom-background-target": "image" } %>
+    <div class="overlay"></div>
   </div>
+
   <div class="container-welcome">
     <div class="block-welcome">
       <h1>L'entre-deux-pommes</h1>
       <h2>Chambre d'hôte</h2>
-      <%= link_to 'Découvrir le site', home_path, class: 'btn-home' %>
+      <%= link_to "Découvrir le site",
+        home_path,
+        class: "btn-home",
+        data: { turbo: false } %>
     </div>
   </div>
 </div>

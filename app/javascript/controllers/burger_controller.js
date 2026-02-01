@@ -1,11 +1,15 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {
-    console.log("Burger controller loaded ✅")
-    this.element.addEventListener("click", () => {
-      const nav = document.querySelector(".navbarul")
-      nav.classList.toggle("active")
-    })
+  static targets = ["menu"]
+
+  toggle() {
+    this.menuTarget.classList.toggle("active")
+    document.body.classList.toggle("menu-open")
+  }
+
+  close() {
+    this.menuTarget.classList.remove("active")
+    document.body.classList.remove("menu-open")
   }
 }

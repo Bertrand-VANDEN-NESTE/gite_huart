@@ -1,5 +1,4 @@
-// Turbo Rails
 import "@hotwired/turbo-rails"
-import "./controllers"  // index.js et tous les contrôleurs
+import "controllers"
 
 console.log("JS chargé ✅")

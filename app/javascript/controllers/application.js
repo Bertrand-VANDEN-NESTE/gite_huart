@@ -1,3 +1,8 @@
 import { Application } from "@hotwired/stimulus"
 
-export const application = Application.start()
+const application = Application.start()
+
+// 🔑 OBLIGATOIRE pour debug + stabilité
+window.Stimulus = application
+
+export { application }

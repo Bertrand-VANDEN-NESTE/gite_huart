@@ -1,11 +1,47 @@
 <div class="navbarbox" data-controller="burger">
   <nav class="navbar">
-    <button class="burger" data-action="click->burger#toggle">☰</button>
+
+    <button
+      class="burger"
+      data-action="click->burger#toggle"
+      aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <ul class="navbarul" data-burger-target="menu">
-      <li><%= link_to 'Accueil', root_path, class: 'navbarlink' %></li>
-      <li><%= link_to 'Chambres', rooms_path, class: 'navbarlink' %></li>
-      <li><%= link_to 'Activités', activities_path, class: 'navbarlink' %></li>
-      <li><%= link_to 'Contact', contact_path, class: 'navbarlink navbarlink--cta' %></li>
+      <li>
+        <%= link_to "Bienvenue", welcome_path,
+          class: "navbarlink",
+          turbo: false,
+          data: { action: "click->burger#close" } %>
+      </li>
+
+      <li>
+        <%= link_to "Accueil", home_path,
+          class: "navbarlink",
+          data: { action: "click->burger#close" } %>
+      </li>
+
+      <li>
+        <%= link_to "Chambres", rooms_path,
+          class: "navbarlink",
+          data: { action: "click->burger#close" } %>
+      </li>
+
+      <li>
+        <%= link_to "Activités", activities_path,
+          class: "navbarlink",
+          data: { action: "click->burger#close" } %>
+      </li>
+
+      <li>
+        <%= link_to "Contact", contact_path,
+          class: "navbarlink navbarlink--cta",
+          data: { action: "click->burger#close" } %>
+      </li>
     </ul>
+
   </nav>
 </div>
