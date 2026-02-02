@@ -1,8 +1,6 @@
 <%= render "components/navbar" %>
 <%= render "components/backgroundheader" %>
 
-<h1 class="index_room_title">Nos chambres</h1>
-
 <% @rooms.each do |room| %>
   <div class="room-card">
     <% if room.image_paths.any? %>
