@@ -50,24 +50,30 @@
         <h3>Envoyer un message</h3>
         <%= form_with url: contact_path, method: :post, local: true do |f| %>
 
-        <div class="form-group">
-          <%= f.text_field :name, required: true %>
-          <%= f.label :name, "Nom complet" %>
-        </div>
+          <div class="form-group">
+            <%= f.text_field :name, required: true %>
+            <%= f.label :name, "Nom complet" %>
+          </div>
 
-        <div class="form-group">
-          <%= f.email_field :email, required: true %>
-          <%= f.label :email, "Email" %>
-        </div>
+          <div class="form-group">
+            <%= f.email_field :email, required: true %>
+            <%= f.label :email, "Email" %>
+          </div>
 
-        <div class="form-group">
-          <%= f.text_area :message, rows: 4, required: true %>
-          <%= f.label :message, "Votre message" %>
-        </div>
+          <div class="form-group">
+            <%= f.text_area :message, rows: 4, required: true %>
+            <%= f.label :message, "Votre message" %>
+          </div>
 
-        <%= f.submit "Envoyer", class: "btn-contact" %>
+          <!-- 🛡️ Honeypot anti-spam -->
+          <div style="display:none;">
+            <%= f.label :nickname %>
+            <%= f.text_field :nickname, autocomplete: "off" %>
+          </div>
 
-      <% end %>
+          <%= f.submit "Envoyer", class: "btn-contact" %>
+
+        <% end %>
       </div>
 
     </div>
