@@ -3,50 +3,47 @@
 
   <div class="footer-inner">
 
-    <!-- LOGO -->
-    <div class="footer-logo">
+    <!-- COLONNE GAUCHE : LOGO -->
+    <div class="footer-brand">
       <%= image_tag "logo.png",
           alt: "Logo L'Entre Deux Pommes",
           class: "footer-logo-img" %>
     </div>
 
-    <!-- CONTACT PROTÉGÉ -->
-    <div class="footer-contact">
+    <!-- COLONNE DROITE : CONTENU -->
+    <div class="footer-content">
 
-      <!-- Email protégé -->
-      <a data-controller="contact-protect"
-         data-action="click->contact-protect#reveal"
-         data-contact-protect-user-value="lentredeuxpommes"
-         data-contact-protect-domain-value="gmail.com">
-         Afficher l’email
-      </a>
+      <div class="footer-contact">
+        <a data-controller="contact-protect"
+           data-action="click->contact-protect#reveal"
+           data-contact-protect-user-value="lentredeuxpommes"
+           data-contact-protect-domain-value="gmail.com">
+           Afficher l’email
+        </a>
 
-      <span class="separator">•</span>
+        <span class="separator">•</span>
 
-      <!-- Téléphone protégé -->
-      <a data-controller="contact-protect"
-         data-action="click->contact-protect#reveal"
-         data-contact-protect-phone-value="+33677320728">
-         Afficher le téléphone
-      </a>
+        <a data-controller="contact-protect"
+           data-action="click->contact-protect#reveal"
+           data-contact-protect-phone-value="+33677320728">
+           Afficher le téléphone
+        </a>
+      </div>
 
-    </div>
+      <div class="footer-address">
+        608 route de la Guiberdière — Lézigné, France
+      </div>
 
-    <!-- ADRESSE -->
-    <div class="footer-address">
-      608 route de la Guiberdière — Lézigné, France
-    </div>
+      <div class="footer-links">
+        <%= link_to 'Mentions légales', legal_path %>
+        <span class="separator">•</span>
+        <%= link_to 'Politique de confidentialité', policy_path %>
+      </div>
 
-    <!-- LIENS -->
-    <div class="footer-links">
-      <%= link_to 'Mentions légales', legal_path %>
-      <span class="separator">•</span>
-      <%= link_to 'Politique de confidentialité', policy_path %>
-    </div>
+      <div class="footer-bottom">
+        © <%= Time.current.year %> L’Entre Deux Pommes — Tous droits réservés
+      </div>
 
-    <!-- COPYRIGHT -->
-    <div class="footer-bottom">
-      © <%= Time.current.year %> L’Entre Deux Pommes — Tous droits réservés
     </div>
 
   </div>
