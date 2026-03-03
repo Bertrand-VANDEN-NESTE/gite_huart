@@ -4,7 +4,7 @@ FOOTER PREMIUM MAISON D'HÔTES
 
 .footer {
   position: relative;
-  padding: 80px 20px 60px;
+  padding: 90px 20px 60px;
 
   background: linear-gradient(135deg, #f9fafc, #eef2f7);
   backdrop-filter: blur(8px);
@@ -31,7 +31,34 @@ FOOTER PREMIUM MAISON D'HÔTES
   background: linear-gradient(to right, transparent, #d1d5db, transparent);
 }
 
-/* contenu */
+/* ===============================
+LOGO ROND
+================================ */
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.footer-logo-img {
+  width: 200px;              /* taille fixe pour un rond parfait */
+  height: 200px;             /* même valeur que width */
+  object-fit: contain;         /* évite la déformation */
+  border-radius: 50%;        /* rend l’image parfaitement ronde */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* effet premium */
+  background: white;         /* fond blanc pour rendu propre */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+CONTENU
+================================ */
 
 .footer-inner {
   max-width: 1100px;
@@ -43,7 +70,7 @@ FOOTER PREMIUM MAISON D'HÔTES
   gap: 25px;
 }
 
-/* contact */
+/* contact & liens */
 
 .footer-contact,
 .footer-links {
@@ -58,13 +85,15 @@ FOOTER PREMIUM MAISON D'HÔTES
 }
 
 .footer-bottom {
-  margin-top: 25px;
+  margin-top: 30px;
   font-size: 0.8rem;
   color: #9ca3af;
   letter-spacing: 1px;
 }
 
-/* liens */
+/* ===============================
+LIENS
+================================ */
 
 .footer a {
   color: #2c3e50;
@@ -88,7 +117,7 @@ FOOTER PREMIUM MAISON D'HÔTES
   width: 100%;
 }
 
-/* icônes minimalistes */
+/* icônes */
 
 .icon {
   margin-right: 6px;
@@ -103,7 +132,6 @@ FOOTER PREMIUM MAISON D'HÔTES
   color: #cbd5e1;
 }
 
-
 /* ===============================
 RESPONSIVE
 ================================ */
@@ -111,7 +139,12 @@ RESPONSIVE
 @media (max-width: 768px) {
 
   .footer {
-    padding: 60px 15px 40px;
+    padding: 70px 15px 40px;
+  }
+
+  .footer-logo-img {
+    width: 160px;
+    height: 160px;
   }
 
   .footer-contact,

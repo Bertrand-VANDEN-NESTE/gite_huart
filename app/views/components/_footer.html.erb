@@ -3,6 +3,14 @@
 
   <div class="footer-inner">
 
+    <!-- LOGO -->
+    <div class="footer-logo">
+      <%= image_tag "logo.png",
+          alt: "Logo L'Entre Deux Pommes",
+          class: "footer-logo-img" %>
+    </div>
+
+    <!-- CONTACT -->
     <div class="footer-contact">
       <a href="mailto:lentredeuxpommes@gmail.com">
         <span class="icon">✉</span>
@@ -17,16 +25,19 @@
       </a>
     </div>
 
+    <!-- ADRESSE -->
     <div class="footer-address">
       608 route de la Guiberdière — Lézigné, France
     </div>
 
+    <!-- LIENS -->
     <div class="footer-links">
       <%= link_to 'Mentions légales', legal_path %>
       <span class="separator">•</span>
       <%= link_to 'Politique de confidentialité', policy_path %>
     </div>
 
+    <!-- COPYRIGHT -->
     <div class="footer-bottom">
       © <%= Time.current.year %> L’Entre Deux Pommes — Tous droits réservés
     </div>
