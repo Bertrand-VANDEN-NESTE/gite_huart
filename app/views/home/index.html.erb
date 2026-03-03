@@ -1,72 +1,55 @@
 <%= render "components/navbar" %>
 <%= render "components/backgroundheader" %>
 
-<!-- Welcome / Intro Section -->
-<section class="home-welcome">
-  <div class="home-welcome-text">
+<section class="home-intro" data-controller="reveal">
 
-    <p>
-      Il y a une dizaine d’années, nous avons eu un véritable coup de cœur pour cette
-      demeure du XVIᵉ siècle et son histoire. Très vite, l’envie de partager ce lieu
-      paisible, niché au cœur de l’Anjou, s’est imposée comme une évidence.
-    </p>
+  <div class="home-intro-inner">
 
-    <p>
-      Nos chambres d’hôtes sont conçues comme nous aimons les trouver en voyage :
-      spacieuses, lumineuses et propices au cocooning. Elles accueillent un séjour à
-      deux ou en famille, avec des mezzanines pour offrir aux enfants leur propre
-      espace, tout en restant proches des parents.
-    </p>
-
-    <p>
-      Chaque matin, nous vous proposons un petit-déjeuner continental dans la
-      salle d’accueil, où vous trouverez également une bouilloire, un café, et un
-      petit réfrigérateur pour vos boissons fraîches.
-    </p>
-
-    <p>
-      En saison estivale, la piscine extérieure devient un havre de détente,
-      ouverte à tous et sécurisée la nuit. Entourée de vergers, notre maison offre
-      un environnement calme et préservé.
-    </p>
-
-    <p>
-      Le cadre se prête aux balades au bord du Loir ou en forêt, aux sorties à vélo,
-      ainsi qu’à la découverte des nombreux sites et activités de la région :
-      châteaux, parcs, activités nautiques ou visites culturelles. Nous serons
-      heureux de vous conseiller et partager nos bonnes adresses.
-    </p>
-
-    <p>
-      Plus qu’un hébergement, nous vous accueillons chez nous, simplement et
-      sincèrement, pour vous faire découvrir un lieu authentique et la douceur de
-      vivre angevine.
-    </p>
-  </div>
-</section>
-
-<!-- Carrousel Section -->
-<section class="home-carousel">
-  <% @home_photos.each do |photo| %>
-    <% next if photo.image_paths.empty? %>
-    <div class="carousel-container" data-controller="carousel-three">
-      <div class="carousel-track" data-carousel-three-target="track">
-        <% photo.image_paths.each do |image| %>
-          <div class="carousel-slide">
+    <!-- MOSAÏQUE -->
+    <div class="home-gallery">
+      <% @home_photos.each do |photo| %>
+        <% photo.image_paths.first(6).each do |image| %>
+          <div class="gallery-item">
             <%= image_tag image,
-              class: "carousel-image",
               data: {
                 action: "click->lightbox#open",
                 lightbox_image_url: asset_path(image)
               } %>
           </div>
         <% end %>
-      </div>
-
-      <button class="carousel-button prev" data-action="carousel-three#prev">‹</button>
-      <button class="carousel-button next" data-action="carousel-three#next">›</button>
+      <% end %>
     </div>
-  <% end %>
+
+    <!-- TEXTE -->
+    <div class="home-text">
+
+      <span class="home-subtitle">Maison d’hôtes de charme</span>
+
+      <h2>L’Entre Deux Pommes</h2>
+
+      <div class="home-divider"></div>
+
+      <p>
+        Il y a une dizaine d’années, nous avons eu un véritable coup de cœur pour cette
+        demeure du XVIᵉ siècle et son histoire.
+      </p>
+
+      <p>
+        Nos chambres sont pensées comme nous aimons les trouver en voyage :
+        lumineuses, spacieuses, propices au cocooning.
+      </p>
+
+      <p>
+        Entourée de vergers, notre maison offre un environnement paisible,
+        idéal pour se ressourcer et découvrir l’Anjou.
+      </p>
+
+      <%= link_to "Découvrir nos chambres", rooms_path, class: "home-button" %>
+
+    </div>
+
+  </div>
+
 </section>
 
 <!-- Lightbox -->

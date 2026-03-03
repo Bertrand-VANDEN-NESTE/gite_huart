@@ -1,127 +1,159 @@
 /* ===============================
-WELCOME TEXT
+HOME INTRO LUXE
 ================================ */
-.home-welcome {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 0 1.5rem;
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.7;
-  color: #333;
 
-  .home-welcome-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-  }
+.home-intro {
+  padding: 140px 60px;
+  background: #f8f9fb;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease;
 }
 
-/* ===============================
-CAROUSEL
-================================ */
-.home-carousel {
-  width: 90%;
-  margin: 50px auto;
-
-  .carousel-container {
-    position: relative;
-    overflow: hidden;
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .carousel-slide {
-      flex: 0 0 33.33%;
-      padding: 0 10px;
-    }
-
-    .carousel-image {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 18px rgba(0,0,0,0.3);
-      }
-    }
-
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.9);
-      border: none;
-      font-size: 2.5rem;
-      padding: 0 15px;
-      cursor: pointer;
-      z-index: 2;
-      border-radius: 50%;
-      transition: background 0.3s ease;
-
-      &:hover { background: #3498db; color: #fff; }
-
-      &.prev { left: 10px; }
-      &.next { right: 10px; }
-    }
-  }
+.home-intro.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ===============================
-LIGHTBOX
-================================ */
-.lightbox {
-  position: fixed;
-  top:0; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: center;
+.home-intro-inner {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 100px;
   align-items: center;
-  z-index: 9999;
+}
 
-  &.hidden { display: none; }
+/* ===============================
+MOSAÏQUE PREMIUM
+================================ */
 
-  .lightbox-image {
-    max-width: 90vw;
-    max-height: 90vh;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
-  }
+.home-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 240px;
+  gap: 25px;
+  position: relative;
+}
 
-  .lightbox-close {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    font-size: 3rem;
-    color: white;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
+.gallery-item {
+  overflow: hidden;
+  border-radius: 22px;
+  position: relative;
+}
+
+.gallery-item:nth-child(1) {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease, filter 0.7s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.08);
+}
+
+/* Ligne verticale luxe */
+.home-gallery::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #d4d7dd, transparent);
+}
+
+/* ===============================
+TEXTE EDITORIAL
+================================ */
+
+.home-text {
+  padding-left: 20px;
+}
+
+.home-subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.home-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.home-divider {
+  width: 60px;
+  height: 1px;
+  background: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.home-text p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 22px;
+  color: #444;
+}
+
+/* ===============================
+BOUTON LUXE
+================================ */
+
+.home-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 34px;
+  border: 1px solid #2c3e50;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: #2c3e50;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.home-button:hover {
+  background: #2c3e50;
+  color: white;
 }
 
 /* ===============================
 RESPONSIVE
 ================================ */
-@media (max-width: 1024px) {
-  .home-hero { height: 350px; }
-  .home-hero-content { h1 { font-size: 2.5rem; } h2 { font-size: 1.5rem; } }
-  .carousel-slide { flex: 0 0 50%; }
-}
 
-@media (max-width: 768px) {
-  .home-hero { height: 250px; }
-  .home-hero-content { h1 { font-size: 2rem; } h2 { font-size: 1.2rem; } }
-  .carousel-slide { flex: 0 0 100%; padding: 0 5px; }
-  .home-welcome { padding: 0 1rem; }
-}
+@media (max-width: 1100px) {
 
-@media (max-width: 480px) {
-  .home-hero { height: 200px; }
-  .home-hero-content { h1 { font-size: 1.5rem; } h2 { font-size: 1rem; } }
+  .home-intro-inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .home-gallery::after {
+    display: none;
+  }
+
+  .home-text {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .home-text h2 {
+    font-size: 2.3rem;
+  }
 }
