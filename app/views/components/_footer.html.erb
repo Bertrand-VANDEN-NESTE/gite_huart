@@ -14,12 +14,21 @@
     <div class="footer-contact">
 
       <!-- Email protégé -->
-      <a data-controller="contact-protect" data-contact-protect-user-value="lentredeuxpommes" data-contact-protect-domain-value="gmail.com"></a>
+      <a data-controller="contact-protect"
+         data-action="click->contact-protect#reveal"
+         data-contact-protect-user-value="lentredeuxpommes"
+         data-contact-protect-domain-value="gmail.com">
+         Afficher l’email
+      </a>
 
       <span class="separator">•</span>
 
       <!-- Téléphone protégé -->
-      <a data-controller="contact-protect" data-contact-protect-phone-value="+33677320728"></a>
+      <a data-controller="contact-protect"
+         data-action="click->contact-protect#reveal"
+         data-contact-protect-phone-value="+33677320728">
+         Afficher le téléphone
+      </a>
 
     </div>
 

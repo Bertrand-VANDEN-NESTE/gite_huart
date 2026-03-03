@@ -15,7 +15,6 @@
 
       <div class="contact-info">
 
-        <!-- Adresse -->
         <div class="contact-item">
           <div class="contact-icon">📍</div>
           <div>
@@ -24,26 +23,28 @@
           </div>
         </div>
 
-        <!-- Téléphone protégé -->
+        <!-- 📞 Téléphone protégé -->
         <div class="contact-item">
           <div class="contact-icon">📞</div>
           <div>
             <h4>Téléphone</h4>
             <p>
               <a data-controller="contact-protect"
+                 data-action="click->contact-protect#reveal"
                  data-contact-protect-phone-value="+33677320728">
               </a>
             </p>
           </div>
         </div>
 
-        <!-- Email protégé -->
+        <!-- ✉ Email protégé -->
         <div class="contact-item">
           <div class="contact-icon">✉</div>
           <div>
             <h4>Email</h4>
             <p>
               <a data-controller="contact-protect"
+                 data-action="click->contact-protect#reveal"
                  data-contact-protect-user-value="lentredeuxpommes"
                  data-contact-protect-domain-value="gmail.com">
               </a>
@@ -86,7 +87,6 @@
           <%= f.submit "Envoyer", class: "btn-contact" %>
 
         <% end %>
-
       </div>
 
     </div>
