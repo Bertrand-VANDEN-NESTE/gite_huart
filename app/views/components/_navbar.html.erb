@@ -11,11 +11,6 @@
     </button>
 
     <ul class="navbarul" data-burger-target="menu">
-      <li>
-        <%= link_to "Bienvenue", welcome_path,
-          class: "navbarlink",
-          data: { action: "click->burger#close" } %>
-      </li>
 
       <li>
         <%= link_to "Accueil", home_path,
@@ -24,7 +19,7 @@
       </li>
 
       <li>
-        <%= link_to "Chambres", rooms_path,
+        <%= link_to "Nos Chambres", rooms_path,
           class: "navbarlink",
           data: { action: "click->burger#close" } %>
       </li>
