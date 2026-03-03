@@ -1,3 +1,29 @@
+<%= render "components/navbar" %>
+
+<!-- INTRO -->
+
+<section class="rooms-intro" data-controller="reveal">
+  <div class="rooms-text">
+    <span class="rooms-subtitle">Séjourner à L’Entre Deux Pommes</span>
+    <h1>Nos Chambres</h1>
+    <div class="rooms-divider"></div>
+
+    <p>
+      Spacieuses, lumineuses et pensées pour le confort,
+      nos chambres d’hôtes allient charme de l’ancien et élégance contemporaine.
+    </p>
+
+    <p>
+      Chaque suite dispose d’un espace généreux,
+      idéal pour un séjour à deux ou en famille,
+      dans un cadre paisible au cœur de l’Anjou.
+    </p>
+  </div>
+</section>
+
+
+<!-- LISTE DES CHAMBRES -->
+
 <section class="rooms-wrapper">
 
   <% @rooms.each_with_index do |room, index| %>
@@ -45,3 +71,5 @@
   <% end %>
 
 </section>
+
+<%= render "components/footer" %>
