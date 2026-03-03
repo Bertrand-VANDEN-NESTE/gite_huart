@@ -48,7 +48,7 @@ Rails.application.configure do
   # Mailer
   # ===============================
   config.action_mailer.perform_caching = false
-  config.consider_all_requests_local = true
+  config.consider_all_requests_local = false
 
   # IMPORTANT : nécessaire pour générer les URLs dans les emails
   config.action_mailer.default_url_options = {
