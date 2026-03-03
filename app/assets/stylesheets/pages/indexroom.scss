@@ -1,204 +1,247 @@
 /* ===============================
-GLOBAL WRAPPER
+INTRO
+================================ */
+
+.rooms-intro {
+  padding: 150px 60px 100px;
+  background: linear-gradient(135deg, #f8f9fb, #eef2f6);
+  text-align: center;
+}
+
+.rooms-text {
+  max-width: 800px;
+  margin: auto;
+}
+
+.rooms-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.rooms-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+.rooms-divider {
+  width: 60px;
+  height: 1px;
+  background: #2c3e50;
+  margin: 0 auto 30px;
+}
+
+.rooms-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* ===============================
+ROOM LAYOUT
 ================================ */
 
 .rooms-wrapper {
-  width: 90%;
-  max-width: 1200px;
-  margin: 60px auto;
+  max-width: 1300px;
+  margin: 120px auto;
+  padding: 0 40px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 120px;
 }
 
-/* ===============================
-ROOM CARD MODERNE
-================================ */
-
-.room-card {
-  display: flex;
-  gap: 3rem;
+.room-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
   align-items: center;
-
-  padding: 2rem;
-  border-radius: 22px;
-
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(10px);
-
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-
-  transition: all 0.6s ease;
 
   opacity: 0;
   transform: translateY(40px);
+  transition: all 1s ease;
+}
 
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.room-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.room-row.reverse {
+  direction: rtl;
+}
+
+.room-row.reverse .room-content {
+  direction: ltr;
 }
 
 /* ===============================
-IMAGES / CAROUSEL
+IMAGES
 ================================ */
 
-.carousel-container {
-  flex: 1;
+.room-media {
+  position: relative;
 }
 
 .carousel {
-  position: relative;
   overflow: hidden;
-  border-radius: 18px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-
-  .carousel__track {
-    display: flex;
-    transition: transform 0.6s ease;
-  }
-
-  .carousel__slide {
-    min-width: 100%;
-  }
-
-  .img_carousel {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-    cursor: pointer;
-
-    transition: transform 0.8s ease;
-  }
-
-  .carousel__btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-
-    background: rgba(255,255,255,0.85);
-    border: none;
-    font-size: 2.4rem;
-    padding: 0 14px;
-    cursor: pointer;
-    border-radius: 50%;
-
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: #2c3e50;
-      color: white;
-    }
-  }
-
-  .carousel__btn--prev { left: 15px; }
-  .carousel__btn--next { right: 15px; }
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
+.carousel__track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.carousel__slide {
+  min-width: 100%;
+}
+
+.room-image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.room-image:hover {
+  transform: scale(1.05);
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  font-size: 2rem;
+  padding: 0 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel__btn:hover {
+  background: #2c3e50;
+  color: white;
+}
+
+.carousel__btn--prev { left: 20px; }
+.carousel__btn--next { right: 20px; }
+
 .no-image {
-  height: 380px;
+  height: 480px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #f7f7f7;
-  border-radius: 18px;
-  color: #999;
+  border-radius: 24px;
 }
 
 /* ===============================
-ROOM INFO PANEL
+ROOM CONTENT
 ================================ */
 
-.room-info {
-  flex: 1;
-
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #2c3e50;
-  }
+.room-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
 }
-
-/* ===============================
-META STYLE MODERNE
-================================ */
 
 .room-meta {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin-bottom: 25px;
+}
 
-  p {
-    background: white;
-    padding: 10px 14px;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+.room-meta p {
+  background: #ffffff;
+  padding: 14px 16px;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
 
-    strong {
-      display: block;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      color: #888;
-    }
+.room-meta strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #999;
+}
 
-    span {
-      font-size: 1rem;
-      color: #2c3e50;
-    }
-  }
+.room-meta span {
+  font-size: 1rem;
+  color: #2c3e50;
 }
 
 .features {
-  margin-top: 10px;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.8;
+  margin-bottom: 25px;
 }
 
 /* ===============================
 BOUTON PREMIUM
 ================================ */
 
-.btn-room {
-  margin-top: 20px;
-  align-self: flex-start;
+.room-button {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 1px solid #2c3e50;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #2c3e50;
+  transition: all 0.4s ease;
+}
 
-  padding: 10px 18px;
-  border-radius: 12px;
-
+.room-button:hover {
   background: #2c3e50;
   color: white;
-  text-decoration: none;
-
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  }
 }
 
 /* ===============================
 RESPONSIVE
 ================================ */
 
-@media (max-width: 1024px) {
-  .room-card {
-    flex-direction: column;
+@media (max-width: 1100px) {
+
+  .room-row,
+  .room-row.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .room-image {
+    height: 350px;
+  }
+
+  .rooms-wrapper {
+    gap: 80px;
   }
 }
 
 @media (max-width: 768px) {
-  .img_carousel {
+
+  .rooms-intro {
+    padding: 100px 25px 60px;
+  }
+
+  .rooms-wrapper {
+    padding: 0 20px;
+  }
+
+  .room-image {
     height: 260px;
   }
 
   .room-meta {
     grid-template-columns: 1fr;
-  }
-
-  .room-info h2 {
-    font-size: 1.6rem;
   }
 }
