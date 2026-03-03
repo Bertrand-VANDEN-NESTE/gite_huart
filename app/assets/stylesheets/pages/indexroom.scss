@@ -1,247 +1,58 @@
 /* ===============================
-INTRO
+ROOM MOSAÏQUE
 ================================ */
 
-.rooms-intro {
-  padding: 150px 60px 100px;
-  background: linear-gradient(135deg, #f8f9fb, #eef2f6);
-  text-align: center;
-}
-
-.rooms-text {
-  max-width: 800px;
-  margin: auto;
-}
-
-.rooms-subtitle {
-  font-size: 0.75rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #9ca3af;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.rooms-text h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  margin-bottom: 25px;
-}
-
-.rooms-divider {
-  width: 60px;
-  height: 1px;
-  background: #2c3e50;
-  margin: 0 auto 30px;
-}
-
-.rooms-text p {
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: #444;
-  margin-bottom: 15px;
-}
-
-/* ===============================
-ROOM LAYOUT
-================================ */
-
-.rooms-wrapper {
-  max-width: 1300px;
-  margin: 120px auto;
-  padding: 0 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 120px;
-}
-
-.room-row {
+.room-gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s ease;
-}
-
-.room-row.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.room-row.reverse {
-  direction: rtl;
-}
-
-.room-row.reverse .room-content {
-  direction: ltr;
-}
-
-/* ===============================
-IMAGES
-================================ */
-
-.room-media {
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 220px;
+  gap: 20px;
   position: relative;
 }
 
-.carousel {
+.room-gallery .gallery-item {
   overflow: hidden;
-  border-radius: 24px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  border-radius: 22px;
 }
 
-.carousel__track {
-  display: flex;
-  transition: transform 0.6s ease;
+.room-gallery .gallery-item.large {
+  grid-row: span 2;
 }
 
-.carousel__slide {
-  min-width: 100%;
-}
-
-.room-image {
+.room-gallery img {
   width: 100%;
-  height: 480px;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.8s ease;
-}
-
-.room-image:hover {
-  transform: scale(1.05);
-}
-
-.carousel__btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.9);
-  border: none;
-  font-size: 2rem;
-  padding: 0 14px;
-  border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.carousel__btn:hover {
-  background: #2c3e50;
-  color: white;
+.room-gallery img:hover {
+  transform: scale(1.08);
 }
 
-.carousel__btn--prev { left: 20px; }
-.carousel__btn--next { right: 20px; }
-
-.no-image {
-  height: 480px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f7f7f7;
-  border-radius: 24px;
+/* Ajustement alternance */
+.room-row.reverse .room-gallery {
+  order: 2;
 }
 
-/* ===============================
-ROOM CONTENT
-================================ */
-
-.room-content h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 2.2rem;
-  margin-bottom: 25px;
-}
-
-.room-meta {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-bottom: 25px;
-}
-
-.room-meta p {
-  background: #ffffff;
-  padding: 14px 16px;
-  border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.room-meta strong {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: #999;
-}
-
-.room-meta span {
-  font-size: 1rem;
-  color: #2c3e50;
-}
-
-.features {
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 25px;
-}
-
-/* ===============================
-BOUTON PREMIUM
-================================ */
-
-.room-button {
-  display: inline-block;
-  padding: 14px 36px;
-  border: 1px solid #2c3e50;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  text-decoration: none;
-  color: #2c3e50;
-  transition: all 0.4s ease;
-}
-
-.room-button:hover {
-  background: #2c3e50;
-  color: white;
-}
-
-/* ===============================
-RESPONSIVE
-================================ */
-
+/* Responsive */
 @media (max-width: 1100px) {
 
-  .room-row,
-  .room-row.reverse {
-    grid-template-columns: 1fr;
-    direction: ltr;
+  .room-gallery {
+    grid-auto-rows: 180px;
   }
 
-  .room-image {
-    height: 350px;
-  }
-
-  .rooms-wrapper {
-    gap: 80px;
-  }
 }
 
 @media (max-width: 768px) {
 
-  .rooms-intro {
-    padding: 100px 25px 60px;
-  }
-
-  .rooms-wrapper {
-    padding: 0 20px;
-  }
-
-  .room-image {
-    height: 260px;
-  }
-
-  .room-meta {
+  .room-gallery {
     grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .room-gallery .gallery-item.large {
+    grid-row: span 1;
   }
 }
