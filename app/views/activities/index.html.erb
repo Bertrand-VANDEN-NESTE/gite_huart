@@ -1,23 +1,85 @@
 <%= render "components/navbar" %>
-<%= render "components/backgroundheader"%>
 
-<div class="activities-grid">
+<section class="activities-intro" data-controller="reveal">
+
+  <div class="activities-intro-inner">
+
+    <!-- MOSAÏQUE -->
+    <div class="activities-gallery">
+      <% @activities.first(6).each do |activity| %>
+        <% if activity.image_url.present? %>
+          <div class="gallery-item" data-controller="parallax">
+            <%= image_tag(activity.image_url, alt: activity.title) %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <!-- TEXTE -->
+    <div class="activities-text">
+      <span class="activities-subtitle">Explorer la région</span>
+
+      <h2>Activités & Expériences</h2>
+
+      <div class="activities-divider"></div>
+
+      <p>
+        Entre nature, patrimoine et découvertes culturelles,
+        notre région regorge d’expériences à vivre en couple ou en famille.
+      </p>
+
+      <p>
+        Châteaux, balades au bord du Loir, activités nautiques,
+        villages de charme… L’Anjou offre une diversité exceptionnelle.
+      </p>
+
+      <a href="#activities-list" class="activities-button">
+        Découvrir les activités
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LISTE DÉTAILLÉE -->
+
+<section id="activities-list" class="activities-list">
+
   <% @activities.each do |activity| %>
-    <div class="activity-card">
+
+    <div class="activity-row" data-controller="reveal">
+
       <% if activity.image_url.present? %>
         <div class="activity-image">
-          <%= image_tag(activity.image_url, alt: activity.title, class: "activity-img") %>
+          <%= image_tag(activity.image_url, alt: activity.title) %>
         </div>
       <% end %>
 
       <div class="activity-content">
-        <h2><%= activity.title %></h2>
+        <h3><%= activity.title %></h3>
+
         <p><%= activity.description %></p>
+
         <% if activity.distance.present? && activity.distance != "-" %>
-          <p><strong>Distance :</strong> <%= activity.distance %></p>
+          <p class="activity-distance">
+            <span class="icon">📍</span>
+            <%= activity.distance %>
+          </p>
         <% end %>
+
+        <a href="https://www.google.com/maps/search/<%= URI.encode_www_form_component(activity.title) %>"
+           target="_blank"
+           class="activity-map-link">
+           Voir sur la carte
+        </a>
       </div>
+
     </div>
+
   <% end %>
-</div>
+
+</section>
+
 <%= render "components/footer" %>
