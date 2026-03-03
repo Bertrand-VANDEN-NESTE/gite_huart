@@ -20,7 +20,7 @@ Rails.application.configure do
   # Fichiers statiques
   # ===============================
   # Permet à Rails de servir les fichiers statiques depuis /public
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || true
+  config.public_file_server.enabled = true
 
   # ===============================
   # Assets

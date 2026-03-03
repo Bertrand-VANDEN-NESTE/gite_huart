@@ -36,7 +36,7 @@ puts "🌱 Création des activités dans la région..."
 
 Activity.create!([
   {
-    title: "Balades en bord de Loir",
+    title: "Balades en bord de Loire",
     description: "Promenade agréable à seulement 300 mètres du lieu, au bord de la Loire.",
     distance: "300m",
     image_url: "activities/loir_bord.jpg"
