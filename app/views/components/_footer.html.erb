@@ -1,29 +1,35 @@
-<div class="container-footer">
-  <span>
-    <span>
-      <a href="mailto:lentredeuxpommes@gmail.com" target="_self">lentredeuxpommes@gmail.com</a>
-    </span>
-    <span>
-      /
-    </span>
-    <span>
-      <a href="tel:06" >+33 (0)670834578</a>
-    </span>
-  </span>
-  <p>
-    <span>
-      608 route de la guiberdière, Lézigné, France
-    </span>
-  </p>
-  <span>
-    <span>
-      <%= link_to 'Mentions légales', legal_path, class: 'footerli' %>
-    </span>
-    <span>
-      /
-    </span>
-    <span>
-      <%= link_to 'Politique de confientialité', policy_path, class: 'footerli' %>
-    </span>
-  </span>
-</div>
+<footer class="footer" data-controller="reveal">
+  <div class="footer-line"></div>
+
+  <div class="footer-inner">
+
+    <div class="footer-contact">
+      <a href="mailto:lentredeuxpommes@gmail.com">
+        <span class="icon">✉</span>
+        lentredeuxpommes@gmail.com
+      </a>
+
+      <span class="separator">•</span>
+
+      <a href="tel:+33670834578">
+        <span class="icon">☎</span>
+        +33 (0)6 70 83 45 78
+      </a>
+    </div>
+
+    <div class="footer-address">
+      608 route de la Guiberdière — Lézigné, France
+    </div>
+
+    <div class="footer-links">
+      <%= link_to 'Mentions légales', legal_path %>
+      <span class="separator">•</span>
+      <%= link_to 'Politique de confidentialité', policy_path %>
+    </div>
+
+    <div class="footer-bottom">
+      © <%= Time.current.year %> L’Entre Deux Pommes — Tous droits réservés
+    </div>
+
+  </div>
+</footer>

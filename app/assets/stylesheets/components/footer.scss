@@ -1,26 +1,128 @@
-.container-footer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
+/* ===============================
+FOOTER PREMIUM MAISON D'HÔTES
+================================ */
+
+.footer {
+  position: relative;
+  padding: 80px 20px 60px;
+
+  background: linear-gradient(135deg, #f9fafc, #eef2f7);
+  backdrop-filter: blur(8px);
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+/* apparition scroll */
+.footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ligne fine élégante */
+.footer-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d1d5db, transparent);
+}
+
+/* contenu */
+
+.footer-inner {
+  max-width: 1100px;
   margin: auto;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: #f3f3f3;
   text-align: center;
 
-  span {
-    margin: auto;
-    span {
-      a {
-        color: var(--color_txt);
-        text-decoration: none;
-      }
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* contact */
+
+.footer-contact,
+.footer-links {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.footer-address {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  letter-spacing: 1px;
+}
+
+/* liens */
+
+.footer a {
+  color: #2c3e50;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
+  background: #2c3e50;
+  transition: width 0.3s ease;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}
+
+/* icônes minimalistes */
+
+.icon {
+  margin-right: 6px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* séparateurs */
+
+.separator {
+  margin: 0 12px;
+  color: #cbd5e1;
+}
+
+
+/* ===============================
+RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 60px 15px 40px;
   }
 
-  p {
-    margin: auto;
-    color: var(--color_txt);
+  .footer-contact,
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
+
+  .separator {
+    display: none;
+  }
+
 }

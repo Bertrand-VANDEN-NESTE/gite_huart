@@ -1,24 +1,88 @@
 <%= render "components/navbar" %>
 <%= render "components/backgroundheader" %>
-<div class="contact-wrapper">
-  <div class="contact-card">
-    <div class="contact-info">
-      <div class="contact-block">
-        <h3>📍 Adresse</h3>
-        <p>608 route de la Guiberdière<br>Lézigné, France</p>
-      </div>
 
-      <div class="contact-block">
-        <h3>📞 Téléphone</h3>
-        <p><a href="tel:+33670834578">06.70.83.45.78</a></p>
-      </div>
+<section class="contact-section">
 
-      <div class="contact-block">
-        <h3>📧 E-mail</h3>
-        <p><a href="mailto:lentredeuxpommes@gmail.com">lentredeuxpommes@gmail.com</a></p>
+  <div class="contact-container">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-left">
+      <h2 class="contact-title">Nous contacter</h2>
+      <p class="contact-intro">
+        Une question, une demande particulière ou une réservation ?
+        Nous serons ravis d’échanger avec vous.
+      </p>
+
+      <div class="contact-info">
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Adresse</h4>
+            <p>608 route de la Guiberdière<br>Lézigné, France</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Téléphone</h4>
+            <p><a href="tel:+33670834578">06 70 83 45 78</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">✉</div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:lentredeuxpommes@gmail.com">lentredeuxpommes@gmail.com</a></p>
+          </div>
+        </div>
+
       </div>
     </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="contact-right">
+
+      <!-- FORMULAIRE PREMIUM -->
+      <div class="contact-card">
+        <h3>Envoyer un message</h3>
+
+        <form>
+          <div class="form-group">
+            <input type="text" required>
+            <label>Nom complet</label>
+          </div>
+
+          <div class="form-group">
+            <input type="email" required>
+            <label>Email</label>
+          </div>
+
+          <div class="form-group">
+            <textarea rows="4" required></textarea>
+            <label>Votre message</label>
+          </div>
+
+          <button type="submit" class="btn-contact">
+            Envoyer
+          </button>
+        </form>
+      </div>
+
+    </div>
+
   </div>
-</div>
+
+  <!-- GOOGLE MAP -->
+  <div class="contact-map">
+    <iframe
+      src="https://www.google.com/maps?q=L%C3%A9zign%C3%A9%20France&output=embed"
+      loading="lazy">
+    </iframe>
+  </div>
+
+</section>
 
 <%= render "components/footer" %>
