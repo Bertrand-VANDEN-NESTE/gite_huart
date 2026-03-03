@@ -48,27 +48,26 @@
       <!-- FORMULAIRE PREMIUM -->
       <div class="contact-card">
         <h3>Envoyer un message</h3>
+        <%= form_with url: contact_path, method: :post, local: true do |f| %>
 
-        <form>
-          <div class="form-group">
-            <input type="text" required>
-            <label>Nom complet</label>
-          </div>
+        <div class="form-group">
+          <%= f.text_field :name, required: true %>
+          <%= f.label :name, "Nom complet" %>
+        </div>
 
-          <div class="form-group">
-            <input type="email" required>
-            <label>Email</label>
-          </div>
+        <div class="form-group">
+          <%= f.email_field :email, required: true %>
+          <%= f.label :email, "Email" %>
+        </div>
 
-          <div class="form-group">
-            <textarea rows="4" required></textarea>
-            <label>Votre message</label>
-          </div>
+        <div class="form-group">
+          <%= f.text_area :message, rows: 4, required: true %>
+          <%= f.label :message, "Votre message" %>
+        </div>
 
-          <button type="submit" class="btn-contact">
-            Envoyer
-          </button>
-        </form>
+        <%= f.submit "Envoyer", class: "btn-contact" %>
+
+      <% end %>
       </div>
 
     </div>

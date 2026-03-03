@@ -12,26 +12,21 @@ Rails.application.configure do
   # ===============================
   # SSL / Scalingo
   # ===============================
-  # Scalingo termine le SSL avant Puma
   config.force_ssl = true
   config.assume_ssl = true
 
   # ===============================
   # Fichiers statiques
   # ===============================
-  # Permet à Rails de servir les fichiers statiques depuis /public
   config.public_file_server.enabled = true
 
   # ===============================
   # Assets
   # ===============================
-  # Compilation à la volée si un asset manque
-  config.assets.compile = false # Désactivé pour prod, assets précompilés
+  config.assets.compile = false
   config.assets.digest  = true
   config.assets.js_compressor  = :terser
   config.assets.css_compressor = :sassc
-
-  # Affiche une erreur si un asset est manquant
   config.assets.raise_runtime_errors = true
 
   # ===============================
@@ -53,6 +48,24 @@ Rails.application.configure do
   # Mailer
   # ===============================
   config.action_mailer.perform_caching = false
+
+  # IMPORTANT : nécessaire pour générer les URLs dans les emails
+  config.action_mailer.default_url_options = {
+    host: "www.lentredeuxpommes.fr",
+    protocol: "https"
+  }
+
+  # Configuration SMTP Gmail
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              "smtp.gmail.com",
+    port:                 587,
+    domain:               "gmail.com",
+    user_name:            ENV["GMAIL_USERNAME"],
+    password:             ENV["GMAIL_PASSWORD"],
+    authentication:       "plain",
+    enable_starttls_auto: true
+  }
 
   # ===============================
   # I18n

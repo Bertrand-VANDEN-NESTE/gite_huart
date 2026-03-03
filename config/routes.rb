@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "contacts/new"
+  get "contacts/create"
   # Page d'accueil
   root to: 'pages#welcome'
 
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   # Activités
   resources :activities
 
-  # Formulaire de demande de réservation
-  get  'reservation', to: 'reservations#new',    as: :new_reservation
-  post 'reservation', to: 'reservations#create', as: :create_reservation
+  # Formulaire de contact
+  get  "contact", to: "contacts#new"
+  post "contact", to: "contacts#create"
 end
