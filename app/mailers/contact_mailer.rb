@@ -8,7 +8,8 @@ class ContactMailer < ApplicationMailer
     @message = params[:message]
 
     mail(
-      from: @email,
+      from: ENV["GMAIL_USERNAME"],   # ton email Gmail authentifié
+      reply_to: @email,              # l'email du visiteur
       subject: "Nouveau message depuis le site"
     )
   end
