@@ -32,16 +32,26 @@ NAVBAR PREMIUM EVOLUTIVE
 }
 
 /* ===============================
-LOGO
+LOGO ROND NAVBAR
 ================================ */
 
 .navbar-logo img {
-  height: 50px;
+  width: 52px;        /* taille fixe */
+  height: 52px;       /* identique pour cercle parfait */
+  object-fit: cover;  /* évite déformation */
+  border-radius: 50%; /* rend parfaitement rond */
   transition: all 0.4s ease;
 }
 
+/* Effet shrink au scroll */
 .navbar-wrapper.scrolled .navbar-logo img {
-  height: 40px;
+  width: 42px;
+  height: 42px;
+}
+
+/* Léger effet premium au hover */
+.navbar-logo img:hover {
+  transform: scale(1.05);
 }
 
 /* ===============================
