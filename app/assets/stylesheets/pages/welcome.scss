@@ -1,6 +1,13 @@
 /* ===============================
-IMAGE
+IMAGE HERO
 ================================ */
+
+.welcome-hero-image {
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+  position: relative;
+}
 
 .zoom-background {
   width: 100%;
@@ -8,111 +15,104 @@ IMAGE
   object-fit: cover;
   transform-origin: center;
   transition: transform 0.2s ease-out;
-  will-change: transform;
-
-  /* Image plus naturelle */
-  filter: brightness(1.02) contrast(1.05);
+  filter: brightness(1.03) contrast(1.05);
 }
 
 /* ===============================
-OVERLAY LÉGER
+SECTION TEXTE
 ================================ */
 
-.welcome-overlay {
-  position: absolute;
-  inset: 0;
-
-  /* Dégradé très subtil uniquement en bas */
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.05) 0%,
-    rgba(0,0,0,0.15) 100%
-  );
-}
-
-/* ===============================
-CONTENU
-================================ */
-
-.welcome-content {
-  position: relative;
-  z-index: 2;
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+.welcome-intro {
+  padding: 120px 40px;
+  background: linear-gradient(135deg, #f8f9fb, #eef2f6);
   text-align: center;
-  color: white;
-
-  animation: fadeHero 1.4s ease forwards;
 }
 
-/* Subtitle */
+.welcome-intro-inner {
+  max-width: 750px;
+  margin: auto;
+}
+
 .welcome-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 4px;
   text-transform: uppercase;
+  color: #9ca3af;
+  display: block;
   margin-bottom: 20px;
-
-  /* Amélioration lisibilité */
-  text-shadow: 0 2px 12px rgba(0,0,0,0.35);
 }
 
-/* Title */
-.welcome-content h1 {
+.welcome-intro h1 {
   font-family: "Playfair Display", serif;
-  font-size: 4.2rem;
+  font-size: 3.5rem;
   font-weight: 400;
   margin-bottom: 25px;
-
-  /* Lisibilité premium */
-  text-shadow: 0 4px 25px rgba(0,0,0,0.45);
+  color: #2c3e50;
 }
 
-/* Divider */
 .welcome-divider {
   width: 60px;
   height: 1px;
-  background: white;
-  margin-bottom: 30px;
-  opacity: 0.8;
+  background: #2c3e50;
+  margin: 0 auto 30px;
 }
 
-/* Tagline */
 .welcome-tagline {
   font-size: 1.1rem;
-  font-weight: 300;
-  margin-bottom: 40px;
-
-  text-shadow: 0 2px 15px rgba(0,0,0,0.35);
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 45px;
 }
 
 /* ===============================
-BOUTON LUXE PLUS VISIBLE
+BOUTON PREMIUM
 ================================ */
 
 .welcome-button {
   display: inline-block;
   padding: 16px 40px;
-  border: 1px solid white;
+  border: 1px solid #2c3e50;
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-decoration: none;
-  color: white;
-
-  backdrop-filter: blur(3px);
-  background: rgba(255,255,255,0.08);
-
+  color: #2c3e50;
   transition: all 0.4s ease;
 }
 
 .welcome-button:hover {
-  background: white;
-  color: #2c3e50;
+  background: #2c3e50;
+  color: white;
+}
+
+/* ===============================
+RESPONSIVE
+================================ */
+
+@media (max-width: 992px) {
+
+  .welcome-hero-image {
+    height: 60vh;
+  }
+
+  .welcome-intro h1 {
+    font-size: 2.5rem;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .welcome-hero-image {
+    height: 50vh;
+  }
+
+  .welcome-intro {
+    padding: 80px 20px;
+  }
+
+  .welcome-intro h1 {
+    font-size: 2rem;
+  }
+
 }

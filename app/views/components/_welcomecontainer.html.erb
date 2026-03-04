@@ -1,13 +1,12 @@
-<div class="welcome-hero" data-controller="zoom-background">
-
-  <div class="welcome-image">
-    <%= image_tag "house/accueil16.jpg",
+<div class="welcome-hero-image" data-controller="zoom-background">
+  <%= image_tag "house/accueil16.jpg",
       class: "zoom-background",
       data: { "zoom-background-target": "image" } %>
-    <div class="welcome-overlay"></div>
-  </div>
+</div>
 
-  <div class="welcome-content">
+<section class="welcome-intro">
+
+  <div class="welcome-intro-inner">
 
     <span class="welcome-subtitle">
       Maison d’hôtes en Anjou
@@ -18,7 +17,8 @@
     <div class="welcome-divider"></div>
 
     <p class="welcome-tagline">
-      Un lieu authentique entre nature et patrimoine
+      Un lieu authentique entre nature et patrimoine,
+      où charme, calme et douceur de vivre se rencontrent.
     </p>
 
     <%= link_to "Découvrir le site",
@@ -28,4 +28,4 @@
 
   </div>
 
-</div>
+</section>
