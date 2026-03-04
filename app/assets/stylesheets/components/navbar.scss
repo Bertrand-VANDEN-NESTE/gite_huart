@@ -1,17 +1,23 @@
 /* ===============================
-NAVBAR PREMIUM
+NAVBAR PREMIUM EVOLUTIVE
 ================================ */
 
 .navbar-wrapper {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 80px;
+  height: 90px;
   z-index: 1000;
 
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+
+.navbar-wrapper.scrolled {
+  background: rgba(255,255,255,0.95);
+  height: 70px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .navbar {
@@ -30,31 +36,27 @@ LOGO
 ================================ */
 
 .navbar-logo img {
-  height: 42px;
-  width: auto;
-  transition: transform 0.3s ease;
+  height: 50px;
+  transition: all 0.4s ease;
 }
 
-.navbar-logo img:hover {
-  transform: scale(1.05);
+.navbar-wrapper.scrolled .navbar-logo img {
+  height: 40px;
 }
 
 /* ===============================
-MENU DESKTOP
+MENU
 ================================ */
 
 .navbar-menu {
   list-style: none;
   display: flex;
   gap: 2.5rem;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar-link {
   text-decoration: none;
   font-size: 0.95rem;
-  letter-spacing: 0.5px;
   color: #2c3e50;
   position: relative;
   transition: all 0.3s ease;
@@ -71,7 +73,8 @@ MENU DESKTOP
   transition: width 0.3s ease;
 }
 
-.navbar-link:hover::after {
+.navbar-link:hover::after,
+.navbar-link.active::after {
   width: 100%;
 }
 
@@ -81,33 +84,41 @@ MENU DESKTOP
   border-radius: 20px;
 }
 
-.navbar-link--cta::after {
-  display: none;
-}
-
 .navbar-link--cta:hover {
   background: #2c3e50;
   color: white;
 }
 
 /* ===============================
-BURGER
+BURGER ANIMÉ
 ================================ */
 
 .burger {
   display: none;
   flex-direction: column;
   gap: 6px;
-  cursor: pointer;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .burger span {
   width: 26px;
   height: 2px;
   background: #2c3e50;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
 }
 
 /* ===============================
@@ -122,10 +133,10 @@ MOBILE
 
   .navbar-menu {
     position: fixed;
-    top: 80px;
+    top: 90px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 90px);
 
     background: white;
 
@@ -135,10 +146,10 @@ MOBILE
     padding-top: 3rem;
 
     transform: translateY(-100%);
-    transition: transform 0.4s ease, opacity 0.3s ease;
-
     opacity: 0;
     pointer-events: none;
+
+    transition: all 0.4s ease;
   }
 
   .navbar-menu.active {
@@ -148,6 +159,6 @@ MOBILE
   }
 
   .navbar-link {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }

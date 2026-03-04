@@ -1,4 +1,7 @@
-<div class="navbar-wrapper" data-controller="burger">
+<div class="navbar-wrapper"
+     data-controller="burger navbar"
+     data-navbar-target="wrapper">
+
   <nav class="navbar">
 
     <!-- LOGO -->
@@ -12,6 +15,7 @@
     <button
       class="burger"
       data-action="click->burger#toggle"
+      data-burger-target="button"
       aria-label="Menu">
       <span></span>
       <span></span>
@@ -23,31 +27,31 @@
 
       <li>
         <%= link_to "Bienvenue", root_path,
-          class: "navbar-link",
+          class: "navbar-link #{'active' if current_page?(root_path)}",
           data: { action: "click->burger#close" } %>
       </li>
 
       <li>
         <%= link_to "Accueil", home_path,
-          class: "navbar-link",
+          class: "navbar-link #{'active' if current_page?(home_path)}",
           data: { action: "click->burger#close" } %>
       </li>
 
       <li>
         <%= link_to "Nos Chambres", rooms_path,
-          class: "navbar-link",
+          class: "navbar-link #{'active' if current_page?(rooms_path)}",
           data: { action: "click->burger#close" } %>
       </li>
 
       <li>
         <%= link_to "Activités", activities_path,
-          class: "navbar-link",
+          class: "navbar-link #{'active' if current_page?(activities_path)}",
           data: { action: "click->burger#close" } %>
       </li>
 
       <li>
         <%= link_to "Contact", contact_path,
-          class: "navbar-link navbar-link--cta",
+          class: "navbar-link navbar-link--cta #{'active' if current_page?(contact_path)}",
           data: { action: "click->burger#close" } %>
       </li>
 
