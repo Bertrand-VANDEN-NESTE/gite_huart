@@ -1,6 +1,14 @@
-<div class="navbarbox" data-controller="burger">
+<div class="navbar-wrapper" data-controller="burger">
   <nav class="navbar">
 
+    <!-- LOGO -->
+    <div class="navbar-left">
+      <%= link_to root_path, class: "navbar-logo" do %>
+        <%= image_tag "logo.png", alt: "L'Entre Deux Pommes" %>
+      <% end %>
+    </div>
+
+    <!-- BURGER -->
     <button
       class="burger"
       data-action="click->burger#toggle"
@@ -10,31 +18,39 @@
       <span></span>
     </button>
 
-    <ul class="navbarul" data-burger-target="menu">
+    <!-- MENU -->
+    <ul class="navbar-menu" data-burger-target="menu">
+
+      <li>
+        <%= link_to "Bienvenue", root_path,
+          class: "navbar-link",
+          data: { action: "click->burger#close" } %>
+      </li>
 
       <li>
         <%= link_to "Accueil", home_path,
-          class: "navbarlink",
+          class: "navbar-link",
           data: { action: "click->burger#close" } %>
       </li>
 
       <li>
         <%= link_to "Nos Chambres", rooms_path,
-          class: "navbarlink",
+          class: "navbar-link",
           data: { action: "click->burger#close" } %>
       </li>
 
       <li>
         <%= link_to "Activités", activities_path,
-          class: "navbarlink",
+          class: "navbar-link",
           data: { action: "click->burger#close" } %>
       </li>
 
       <li>
         <%= link_to "Contact", contact_path,
-          class: "navbarlink navbarlink--cta",
+          class: "navbar-link navbar-link--cta",
           data: { action: "click->burger#close" } %>
       </li>
+
     </ul>
 
   </nav>

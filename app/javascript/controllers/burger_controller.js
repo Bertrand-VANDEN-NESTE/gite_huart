@@ -5,12 +5,10 @@ export default class extends Controller {
 
   toggle(event) {
     event.preventDefault()
-
     this.menuTarget.classList.toggle("active")
-    document.body.classList.toggle("menu-open")
   }
 
   close() {
-  this.element.classList.remove("open")
-}
+    this.menuTarget.classList.remove("active")
+  }
 }
