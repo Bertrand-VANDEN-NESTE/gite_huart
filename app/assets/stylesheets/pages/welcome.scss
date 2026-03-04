@@ -1,23 +1,6 @@
 /* ===============================
-HERO SECTION
-================================ */
-
-.welcome-hero {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* ===============================
 IMAGE
 ================================ */
-
-.welcome-image {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
 
 .zoom-background {
   width: 100%;
@@ -26,26 +9,29 @@ IMAGE
   transform-origin: center;
   transition: transform 0.2s ease-out;
   will-change: transform;
-  filter: brightness(0.9) contrast(1.05) saturate(1.05);
+
+  /* Image plus naturelle */
+  filter: brightness(1.02) contrast(1.05);
 }
 
 /* ===============================
-OVERLAY PREMIUM
+OVERLAY LÉGER
 ================================ */
 
 .welcome-overlay {
   position: absolute;
   inset: 0;
+
+  /* Dégradé très subtil uniquement en bas */
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.45),
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.55)
+    rgba(255,255,255,0.05) 0%,
+    rgba(0,0,0,0.15) 100%
   );
 }
 
 /* ===============================
-CONTENT
+CONTENU
 ================================ */
 
 .welcome-content {
@@ -63,35 +49,38 @@ CONTENT
   text-align: center;
   color: white;
 
-  opacity: 0;
-  transform: translateY(30px);
   animation: fadeHero 1.4s ease forwards;
-  animation-delay: 0.3s;
 }
 
 /* Subtitle */
 .welcome-subtitle {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   letter-spacing: 4px;
   text-transform: uppercase;
   margin-bottom: 20px;
-  color: rgba(255,255,255,0.8);
+
+  /* Amélioration lisibilité */
+  text-shadow: 0 2px 12px rgba(0,0,0,0.35);
 }
 
 /* Title */
 .welcome-content h1 {
   font-family: "Playfair Display", serif;
-  font-size: 4rem;
+  font-size: 4.2rem;
   font-weight: 400;
   margin-bottom: 25px;
+
+  /* Lisibilité premium */
+  text-shadow: 0 4px 25px rgba(0,0,0,0.45);
 }
 
 /* Divider */
 .welcome-divider {
   width: 60px;
   height: 1px;
-  background: rgba(255,255,255,0.8);
+  background: white;
   margin-bottom: 30px;
+  opacity: 0.8;
 }
 
 /* Tagline */
@@ -99,11 +88,12 @@ CONTENT
   font-size: 1.1rem;
   font-weight: 300;
   margin-bottom: 40px;
-  opacity: 0.9;
+
+  text-shadow: 0 2px 15px rgba(0,0,0,0.35);
 }
 
 /* ===============================
-BOUTON LUXE
+BOUTON LUXE PLUS VISIBLE
 ================================ */
 
 .welcome-button {
@@ -115,49 +105,14 @@ BOUTON LUXE
   letter-spacing: 2px;
   text-decoration: none;
   color: white;
+
+  backdrop-filter: blur(3px);
+  background: rgba(255,255,255,0.08);
+
   transition: all 0.4s ease;
 }
 
 .welcome-button:hover {
   background: white;
   color: #2c3e50;
-}
-
-/* ===============================
-ANIMATION
-================================ */
-
-@keyframes fadeHero {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===============================
-RESPONSIVE
-================================ */
-
-@media (max-width: 992px) {
-
-  .welcome-content h1 {
-    font-size: 2.8rem;
-  }
-
-  .welcome-tagline {
-    font-size: 1rem;
-  }
-
-}
-
-@media (max-width: 600px) {
-
-  .welcome-content h1 {
-    font-size: 2rem;
-  }
-
-  .welcome-subtitle {
-    font-size: 0.65rem;
-  }
-
 }
