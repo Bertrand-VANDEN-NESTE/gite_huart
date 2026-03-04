@@ -1,63 +1,78 @@
 <%= render "components/navbar" %>
 
+<!-- INTRO -->
+
+<section class="contact-intro" data-controller="reveal">
+  <div class="contact-intro-inner">
+
+    <span class="contact-subtitle">Entrer en contact</span>
+    <h1>Nous Contacter</h1>
+    <div class="contact-divider"></div>
+
+    <p>
+      Une question, une demande particulière ou une réservation ?
+      Nous serons ravis d’échanger avec vous et de vous accompagner
+      dans l’organisation de votre séjour.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- SECTION PRINCIPALE -->
+
 <section class="contact-section">
 
   <div class="contact-container">
 
-    <!-- LEFT SIDE -->
-    <div class="contact-left">
-      <h2 class="contact-title">Nous contacter</h2>
-      <p class="contact-intro">
-        Une question, une demande particulière ou une réservation ?
-        Nous serons ravis d’échanger avec vous.
-      </p>
+    <!-- INFOS -->
+    <div class="contact-left" data-controller="reveal">
 
-      <div class="contact-info">
-
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div>
-            <h4>Adresse</h4>
-            <p>608 route de la Guiberdière<br>Lézigné, France</p>
-          </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Adresse</h4>
+          <p>
+            608 route de la Guiberdière<br>
+            Lézigné, France
+          </p>
         </div>
-
-        <!-- 📞 Téléphone protégé -->
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div>
-            <h4>Téléphone</h4>
-            <p>
-              <a data-controller="contact-protect"
-                data-action="click->contact-protect#reveal"
-                data-contact-protect-phone-value="+33677320728">
-                Afficher le téléphone
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <!-- ✉ Email protégé -->
-        <div class="contact-item">
-          <div class="contact-icon">✉</div>
-          <div>
-            <h4>Email</h4>
-            <p>
-              <a data-controller="contact-protect"
-                data-action="click->contact-protect#reveal"
-                data-contact-protect-user-value="lentredeuxpommes"
-                data-contact-protect-domain-value="gmail.com">
-                Afficher l’email
-              </a>
-            </p>
-          </div>
-        </div>
-
       </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>Téléphone</h4>
+          <p>
+            <a data-controller="contact-protect"
+               data-action="click->contact-protect#reveal"
+               data-contact-protect-phone-value="+33677320728">
+              Afficher le téléphone
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">✉</div>
+        <div>
+          <h4>Email</h4>
+          <p>
+            <a data-controller="contact-protect"
+               data-action="click->contact-protect#reveal"
+               data-contact-protect-user-value="lentredeuxpommes"
+               data-contact-protect-domain-value="gmail.com">
+              Afficher l’email
+            </a>
+          </p>
+        </div>
+      </div>
+
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="contact-right">
+
+    <!-- FORMULAIRE -->
+    <div class="contact-right" data-controller="reveal">
 
       <div class="contact-card">
         <h3>Envoyer un message</h3>
@@ -79,29 +94,32 @@
             <%= f.label :message, "Votre message" %>
           </div>
 
-          <!-- Honeypot anti-spam -->
+          <!-- Honeypot -->
           <div style="display:none;">
-            <%= f.label :nickname %>
             <%= f.text_field :nickname, autocomplete: "off" %>
           </div>
 
           <%= f.submit "Envoyer", class: "btn-contact" %>
 
         <% end %>
+
       </div>
 
     </div>
 
   </div>
 
-  <!-- GOOGLE MAP -->
-  <div class="contact-map">
-    <iframe
-      src="https://www.google.com/maps?q=L%C3%A9zign%C3%A9%20France&output=embed"
-      loading="lazy">
-    </iframe>
-  </div>
+</section>
 
+
+<!-- CARTE PREMIUM -->
+
+<section class="contact-map">
+  <iframe
+    src="https://www.google.com/maps?q=608+route+de+la+Guiberdière,+Lézigné,+France&output=embed"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
 </section>
 
 <%= render "components/footer" %>
