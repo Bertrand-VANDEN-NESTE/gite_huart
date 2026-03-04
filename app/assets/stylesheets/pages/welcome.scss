@@ -1,17 +1,22 @@
-.background-welcome {
+/* ===============================
+HERO SECTION
+================================ */
+
+.welcome-hero {
+  position: relative;
   width: 100vw;
   height: 100vh;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
   overflow: hidden;
 }
 
-/* IMAGE */
-.background-welcome-img {
+/* ===============================
+IMAGE
+================================ */
+
+.welcome-image {
   position: absolute;
   inset: 0;
   z-index: 0;
-  overflow: hidden;
 }
 
 .zoom-background {
@@ -21,76 +26,138 @@
   transform-origin: center;
   transition: transform 0.2s ease-out;
   will-change: transform;
-  filter: brightness(1.05) saturate(1.1);
+  filter: brightness(0.9) contrast(1.05) saturate(1.05);
 }
 
-/* OVERLAY */
-.overlay {
+/* ===============================
+OVERLAY PREMIUM
+================================ */
+
+.welcome-overlay {
   position: absolute;
   inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.55)
+  );
 }
 
-/* CONTENU */
-.container-welcome {
+/* ===============================
+CONTENT
+================================ */
+
+.welcome-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
   width: 100%;
   height: 100%;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.block-welcome {
   text-align: center;
-  color: #fff;
-  animation: fadeInUp 1s ease forwards;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  color: white;
 
-  h1 {
-    font-size: 4rem;
-    font-weight: 300;
-    margin-bottom: 0.5rem;
-    color: #fffacd;
-  }
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeHero 1.4s ease forwards;
+  animation-delay: 0.3s;
+}
 
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    color: #ffeeb0;
-  }
+/* Subtitle */
+.welcome-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: rgba(255,255,255,0.8);
+}
 
-  .btn-home {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    border-radius: 30px;
-    background: rgba(255, 230, 180, 0.9);
-    color: #333;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+/* Title */
+.welcome-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
 
-    &:hover {
-      background: rgba(255, 215, 120, 1);
-      transform: translateY(-3px);
-    }
+/* Divider */
+.welcome-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(255,255,255,0.8);
+  margin-bottom: 30px;
+}
+
+/* Tagline */
+.welcome-tagline {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* ===============================
+BOUTON LUXE
+================================ */
+
+.welcome-button {
+  display: inline-block;
+  padding: 16px 40px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.welcome-button:hover {
+  background: white;
+  color: #2c3e50;
+}
+
+/* ===============================
+ANIMATION
+================================ */
+
+@keyframes fadeHero {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* ANIMATION */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ===============================
+RESPONSIVE
+================================ */
+
+@media (max-width: 992px) {
+
+  .welcome-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .welcome-tagline {
+    font-size: 1rem;
+  }
+
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .block-welcome h1 { font-size: 2.2rem; }
-  .block-welcome h2 { font-size: 1rem; }
+@media (max-width: 600px) {
+
+  .welcome-content h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-subtitle {
+    font-size: 0.65rem;
+  }
+
 }

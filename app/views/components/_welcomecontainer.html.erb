@@ -1,20 +1,33 @@
-<div class="background-welcome" data-controller="zoom-background">
+<div class="welcome-hero" data-controller="zoom-background">
 
-  <div class="background-welcome-img">
+  <!-- IMAGE -->
+  <div class="welcome-image">
     <%= image_tag "house/accueil16.jpg",
       class: "zoom-background",
       data: { "zoom-background-target": "image" } %>
-    <div class="overlay"></div>
+    <div class="welcome-overlay"></div>
   </div>
 
-  <div class="container-welcome">
-    <div class="block-welcome">
-      <h1>L'entre-deux-pommes</h1>
-      <h2>Chambre d'hôte</h2>
-      <%= link_to "Découvrir le site",
-        home_path,
-        class: "btn-home",
-        data: { turbo: true } %>
-    </div>
+  <!-- CONTENU -->
+  <div class="welcome-content">
+
+    <span class="welcome-subtitle">
+      Maison d’hôtes en Anjou
+    </span>
+
+    <h1>L’Entre Deux Pommes</h1>
+
+    <div class="welcome-divider"></div>
+
+    <p class="welcome-tagline">
+      Un lieu authentique entre nature et patrimoine
+    </p>
+
+    <%= link_to "Découvrir le site",
+      home_path,
+      class: "welcome-button",
+      data: { turbo: true } %>
+
   </div>
+
 </div>
