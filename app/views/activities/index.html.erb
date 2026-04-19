@@ -69,10 +69,10 @@
           </p>
         <% end %>
 
-        <a href="https://www.google.com/maps/search/<%= URI.encode_www_form_component(activity.title) %>"
-           target="_blank"
-           class="activity-map-link">
-           Voir sur la carte
+        <a href="https://www.google.com/maps/search/?api=1&query=<%= URI.encode_www_form_component(activity.title + ' autour de Huillé-Lézigné') %>"
+          target="_blank"
+          class="activity-map-link">
+          Explorer autour du gîte
         </a>
       </div>
 

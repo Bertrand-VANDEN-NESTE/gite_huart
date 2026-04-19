@@ -1,10 +1,8 @@
 <%= render "components/navbar" %>
 
-<!-- INTRO -->
-
 <section class="rooms-intro" data-controller="reveal">
   <div class="rooms-text">
-    <span class="rooms-subtitle">Séjourner à L’Entre Deux Pommes</span>
+    <span class="rooms-subtitle">Séjourner à L’Entre-Deux-Pommes</span>
     <h1>Nos Chambres</h1>
     <div class="rooms-divider"></div>
 
@@ -14,61 +12,116 @@
     </p>
 
     <p>
-      Chaque suite dispose d’un espace généreux,
-      idéal pour un séjour à deux ou en famille,
+      Idéales pour un séjour à deux ou en famille,
       dans un cadre paisible au cœur de l’Anjou.
     </p>
   </div>
 </section>
 
-
-<!-- LISTE DES CHAMBRES -->
-
 <section class="rooms-wrapper">
 
-  <% @rooms.each_with_index do |room, index| %>
+  <div class="room-row" data-controller="reveal">
 
-    <div class="room-row <%= 'reverse' if index.odd? %>"
-         data-controller="reveal">
+    <!-- IMAGES -->
+    <% base = "rooms/suite1/" %>
+    <% images = ["room1.jpg", "room2.jpg", "room3.jpg", "room4.jpg", "room5.jpg", "room6.jpg", "room7.jpg", "room8.jpg"] %>
 
-      <!-- MOSAÏQUE IMAGES -->
-      <div class="room-gallery">
+    <div class="room-gallery">
+      <% images.each_with_index do |img, i| %>
+        <% src = base + img %>
 
-        <% room.image_paths.first(4).each_with_index do |src, i| %>
-          <div class="gallery-item <%= 'large' if i == 0 %>">
-            <%= image_tag src,
-                  alt: room.title,
-                  loading: "lazy",
-                  data: {
-                    action: "click->lightbox#open",
-                    lightbox_image_url: asset_path(src)
-                  } %>
-          </div>
-        <% end %>
-
-      </div>
-
-      <!-- TEXTE -->
-      <div class="room-content">
-        <h2><%= room.title %></h2>
-
-        <div class="room-meta">
-          <p><strong>Taille</strong><span><%= room.size %></span></p>
-          <p><strong>Capacité</strong><span><%= room.capacity %> personnes</span></p>
-          <p><strong>Lits</strong><span><%= room.bed_count %></span></p>
-          <p><strong>Prix</strong><span><%= number_to_currency(room.price, unit: "€") %> / nuit</span></p>
+        <div class="gallery-item <%= 'large' if i == 0 %>">
+          <%= image_tag src,
+                alt: "Chambre d’hôtes",
+                loading: "lazy",
+                data: {
+                  action: "click->lightbox#open",
+                  lightbox_image_url: asset_path(src)
+                } %>
         </div>
+      <% end %>
+    </div>
 
-        <p class="features"><%= room.features %></p>
+    <!-- TEXTE -->
+    <div class="room-content">
+      <h2>Chambre Double ou Familiale</h2>
 
-        <a href="/contact" class="room-button">
-          Réserver cette chambre
-        </a>
+      <div class="room-meta">
+        <p><strong>Taille</strong><span>XX m²</span></p>
+        <p><strong>Capacité</strong><span>2 à 4 personnes</span></p>
+        <p><strong>Lits</strong><span>1 lit 140×190 + 2 lits 90×190</span></p>
+        <p><strong>Type</strong><span>Chambre double ou familiale</span></p>
       </div>
+
+      <!-- TARIFS -->
+      <div class="room-pricing">
+        <h3>Tarifs</h3>
+
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Capacité</th>
+              <th>Septembre à mai</th>
+              <th>Juin à août</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2 personnes</td>
+              <td>90€ / nuit</td>
+              <td>100€ / nuit</td>
+            </tr>
+            <tr>
+              <td>4 personnes</td>
+              <td>120€ / nuit</td>
+              <td>130€ / nuit</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="pricing-note">
+          Taxes de séjour et petits-déjeuners compris
+        </p>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="features">
+        <p>
+          Chaque chambre dispose d’un accès privatif, avec vue sur le jardin et accès à la piscine extérieure ouverte en saison (du 01/06 au 31/08), sécurisée la nuit par un volet roulant.
+        </p>
+
+        <p>
+          Les chambres sont conçues pour deux personnes ou pour un couple avec deux enfants, logés dans une mezzanine offrant un espace séparé.
+        </p>
+
+        <p>
+          Chaque logement comprend une salle de bains privative avec douche, des articles de toilette gratuits ainsi qu’un sèche-cheveux.
+        </p>
+
+        <p>
+          Un petit-déjeuner continental est servi sur place dans la salle d’accueil. Une bouilloire, une machine à café et un réfrigérateur sont à disposition.
+        </p>
+
+        <p>
+          Le WIFI n’est pas proposé, mais le lieu est couvert par la 4G.
+        </p>
+
+        <p>
+          Chaque chambre est équipée d’une télévision avec lecteur DVD et un large choix de films.
+        </p>
+
+        <p>
+          Parking gratuit et espace sécurisé pour les vélos.
+        </p>
+      </div>
+
+      <a href="/contact" class="room-button">
+        Réserver cette chambre
+      </a>
 
     </div>
 
-  <% end %>
+  </div>
 
 </section>
 

@@ -1,0 +1,278 @@
+/* ===============================
+INTRO
+================================ */
+
+.rooms-intro {
+  padding: 150px 60px 100px;
+  background: linear-gradient(135deg, #f8f9fb, #eef2f6);
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease;
+}
+
+.rooms-intro.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rooms-text {
+  max-width: 800px;
+  margin: auto;
+}
+
+.rooms-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.rooms-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+.rooms-divider {
+  width: 60px;
+  height: 1px;
+  background: #2c3e50;
+  margin: 0 auto 30px;
+}
+
+.rooms-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* ===============================
+WRAPPER
+================================ */
+
+.rooms-wrapper {
+  max-width: 1300px;
+  margin: 120px auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+/* ===============================
+ROOM ROW
+================================ */
+
+.room-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.room-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.room-row.reverse {
+  direction: rtl;
+}
+
+.room-row.reverse .room-content {
+  direction: ltr;
+}
+
+/* ===============================
+MOSAÏQUE IMAGES
+================================ */
+
+.room-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 220px;
+  gap: 20px;
+}
+
+.room-gallery .gallery-item {
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.room-gallery .gallery-item.large {
+  grid-row: span 2;
+}
+
+.room-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  cursor: pointer;
+}
+
+.room-gallery img:hover {
+  transform: scale(1.08);
+}
+
+/* ===============================
+CONTENT
+================================ */
+
+.room-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+}
+
+.room-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.room-meta p {
+  background: #ffffff;
+  padding: 14px 16px;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.room-meta strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.room-meta span {
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+/* ===============================
+PRICING
+================================ */
+
+.room-pricing {
+  margin-bottom: 25px;
+}
+
+.room-pricing h3 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 15px;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.pricing-table th,
+.pricing-table td {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  text-align: left;
+}
+
+.pricing-table th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.pricing-note {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ===============================
+FEATURES
+================================ */
+
+.features {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.features p {
+  margin-bottom: 10px;
+}
+
+.features p::before {
+  content: "• ";
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+/* ===============================
+BOUTON
+================================ */
+
+.room-button {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 1px solid #2c3e50;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #2c3e50;
+  transition: all 0.4s ease;
+}
+
+.room-button:hover {
+  background: #2c3e50;
+  color: white;
+}
+
+/* ===============================
+RESPONSIVE
+================================ */
+
+@media (max-width: 1100px) {
+  .room-row,
+  .room-row.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .rooms-wrapper {
+    gap: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rooms-intro {
+    padding: 100px 25px 60px;
+  }
+
+  .rooms-wrapper {
+    padding: 0 20px;
+  }
+
+  .room-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .room-gallery .gallery-item.large {
+    grid-row: span 1;
+  }
+
+  .room-meta {
+    grid-template-columns: 1fr;
+  }
+}

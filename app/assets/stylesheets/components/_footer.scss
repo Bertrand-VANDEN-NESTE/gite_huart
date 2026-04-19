@@ -1,0 +1,146 @@
+/* ===============================
+FOOTER LUXE MINIMAL
+================================ */
+
+.footer {
+  position: relative;
+  padding: 50px 40px 70px;
+  background: linear-gradient(135deg, #f9fafc, #eef2f7);
+}
+
+/* Ligne fine premium */
+.footer-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d6dbe3, transparent);
+}
+
+/* Layout principal */
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* ===============================
+LOGO LATÉRAL
+================================ */
+
+.footer-brand {
+  flex-shrink: 0;
+}
+
+.footer-logo-img {
+  width: 95px;        /* beaucoup plus petit */
+  height: 95px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+CONTENU DROIT
+================================ */
+
+.footer-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-contact,
+.footer-links {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+.footer-address {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+LIENS PREMIUM
+================================ */
+
+.footer a {
+  color: #2c3e50;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #2c3e50;
+  transition: width 0.3s ease;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}
+
+/* Séparateur discret */
+.separator {
+  margin: 0 10px;
+  color: #d1d5db;
+}
+
+/* ===============================
+RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-logo-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .footer-contact,
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

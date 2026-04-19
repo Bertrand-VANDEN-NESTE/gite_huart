@@ -5,7 +5,7 @@ Activity.destroy_all
 puts "🌱 Création des chambres..."
 
 Room.create!(
-  title: "Chambre Double avec Salle de Bains Privative",
+  title: "Chambre double ou familiale",
   content: "Spacieuse chambre double avec vue sur jardin, équipée d'une salle de bains privative avec douche et sèche-cheveux, parquet, machine à café, armoire et mobilier de jardin.",
   views: 0,
   price: 75.0,
@@ -13,7 +13,7 @@ Room.create!(
   bed_count: 1,
   bathroom: true,
   size: "25 m²",
-  features: "WiFi gratuit, chauffage, mobilier de jardin, entrée privée, machine à café, sèche-cheveux",
+  features: "chauffage, mobilier de jardin, entrée privée, machine à café, sèche-cheveux",
   image_url: "rooms/suite1.jpg",
   slug: "suite1"
 )
@@ -27,7 +27,7 @@ Room.create!(
   bed_count: 3,
   bathroom: true,
   size: "35 m²",
-  features: "WiFi gratuit, mobilier de jardin, bureau, salle de bains privative, chauffage",
+  features: "mobilier de jardin, bureau, salle de bains privative, chauffage",
   image_url: "rooms/suite2.jpg",
   slug: "suite2"
 )
@@ -36,8 +36,8 @@ puts "🌱 Création des activités dans la région..."
 
 Activity.create!([
   {
-    title: "Balades en bord de Loire",
-    description: "Promenade agréable à seulement 300 mètres du lieu, au bord de la Loire.",
+    title: "Balades en bord du loir",
+    description: "Promenade agréable à seulement 300 mètres du lieu, au bord du loir.",
     distance: "300m",
     image_url: "activities/loir_bord.jpg"
   },
