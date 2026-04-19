@@ -156,6 +156,22 @@ BOUTON LUXE
   color: #444;
 }
 
+.seo-content-btn {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #2c3e50;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.seo-content-btn:hover{
+  border-color: #2c3e50;
+}
+
 /* ===============================
 RESPONSIVE
 ================================ */
