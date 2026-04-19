@@ -61,7 +61,7 @@ Activity.create!([
   },
   {
     title: "Visites de châteaux et parcs",
-    description: "Découvrez les magnifiques châteaux et parcs alentour, riches en histoire et nature.",
+    description: "Découvrez les magnifiques châteaux et parcs alentour, riches en histoire et nature. Château de Montgeoffroy, Plessis-Bourré, Brissac…",
     distance: "-",
     image_url: "activities/chateau.jpg"
   },
