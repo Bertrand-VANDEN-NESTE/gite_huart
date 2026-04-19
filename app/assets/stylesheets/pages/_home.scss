@@ -88,7 +88,7 @@ TEXTE EDITORIAL
   margin-bottom: 15px;
 }
 
-.home-text h2 {
+.home-text h1 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: 500;
@@ -131,6 +131,29 @@ BOUTON LUXE
 .home-button:hover {
   background: #2c3e50;
   color: white;
+}
+
+.seo-content {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.seo-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.seo-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 22px;
+  color: #444;
 }
 
 /* ===============================

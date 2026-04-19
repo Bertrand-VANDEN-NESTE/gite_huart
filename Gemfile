@@ -13,6 +13,9 @@ gem 'sqlite3', '~> 1.4', group: [:development, :test]
 # Web server
 gem 'puma', '>= 5.0'
 
+#referencement
+gem 'sitemap_generator'
+
 # Assets & JS
 gem 'sassc-rails'            # déplacé hors du groupe pour production + compilation
 gem 'sprockets-rails'

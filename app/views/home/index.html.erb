@@ -10,6 +10,7 @@
           <div class="gallery-item">
             <%= image_tag image,
               data: {
+                alt: "Chambre d’hôtes en Anjou avec piscine à Huillé-Lézigné",
                 action: "click->lightbox#open",
                 lightbox_image_url: asset_path(image)
               } %>
@@ -23,7 +24,7 @@
 
       <span class="home-subtitle">Chambres d’hôtes de charme</span>
 
-      <h2>L’Entre-Deux-Pommes</h2>
+      <h1>Chambre d’hôtes en Anjou – L’Entre-Deux-Pommes</h1>
 
       <div class="home-divider"></div>
 
@@ -47,6 +48,25 @@
 
   </div>
 
+</section>
+<section class="seo-content">
+  <h2>Votre chambre d’hôtes en Anjou</h2>
+
+  <p>
+    Située à Huillé-Lézigné, au cœur de l’Anjou et à proximité d’Angers, notre chambre d'hôtes L’Entre-Deux-Pommes vous accueille dans un cadre naturel et paisible. Idéale pour un séjour en couple ou en famille, notre chambre d’hôtes allie confort, charme et tranquillité.
+  </p>
+
+  <p>
+    Vous profiterez d’un hébergement spacieux avec accès privatif, d’une piscine extérieure ouverte en saison et d’un environnement propice à la détente. Entre balades en bord de Loir, découverte des châteaux de la Loire et activités en pleine nature, l’Anjou offre une richesse exceptionnelle.
+  </p>
+
+  <p>
+    Que vous soyez en week-end romantique, en vacances en famille ou en étape lors de votre séjour dans le Maine-et-Loire, notre chambre d’hôtes est le point de départ idéal pour explorer la région.
+  </p>
+
+  <p>
+    Découvrez également <%= link_to "nos chambres d’hôtes en Anjou", rooms_path %> pour un séjour confortable et authentique.
+  </p>
 </section>
 
 <%= render "components/footer" %>

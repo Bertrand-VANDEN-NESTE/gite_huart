@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>L'entre-deux-pommes</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Chambre d’hôtes en Anjou avec piscine – L’Entre-Deux-Pommes</title>
+
+    <meta name="description" content="Chambre d’hôtes de charme en Anjou avec piscine, située à Huillé-Lézigné près d’Angers. Idéale pour un séjour en couple ou en famille dans un cadre paisible.">
+
+    <meta name="keywords" content="chambre d'hôtes Anjou, gîte Anjou, chambre d'hôtes Angers, logement Huillé-Lézigné, séjour Anjou, gîte avec piscine Maine-et-Loire">
+
+    <meta name="robots" content="index, follow">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "name": "L’Entre-Deux-Pommes",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "608 La Guiberdière",
+          "addressLocality": "Huillé-Lézigné",
+          "postalCode": "49430",
+          "addressCountry": "FR"
+        }
+      }
+    </script>
     <%= favicon_link_tag "logo.png", rel: "icon", type: "jpg" %>
   </head>
 
